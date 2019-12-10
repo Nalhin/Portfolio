@@ -1,0 +1,17 @@
+jobs:
+  include:
+    - name: "Website"
+      language: node_js
+      node_js: '12.13'
+      cache:
+        directories:
+          - ~/.npm
+          - ~/.cache
+      before_install:
+        - cd app
+      install:
+        - npm install
+      script:
+        - npm run tests:cov
+      after_script:
+        - npx codecov@3

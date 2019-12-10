@@ -1,0 +1,13 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "isolatedModules": false
+  },
+  "exclude": [
+    "node_modules",
+    "src/server/**/*.ts"
+  ],
+  "include": [
+    "src/**/__tests__/.*(ts|tsx)$"
+  ]
+}
