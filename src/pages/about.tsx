@@ -7,7 +7,7 @@ const About = () => {
 
 About.getInitialProps = async () => {
   return {
-    namespacesRequired: withDefaultNamespaces(),
+    namespacesRequired: withDefaultNamespaces(['about']),
   };
 };
 

@@ -8,7 +8,10 @@ interface StyledLinkProps {
 }
 
 const StyledLink = styled.a<StyledLinkProps>`
-  ${props => props.isActive && 'background:red'}
+  ${props => props.isActive && 'background:red;'}
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 interface Props {

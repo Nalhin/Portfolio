@@ -1,6 +1,7 @@
 {
   "changeLanguage": "Zmień język",
   "navigation": {
+    "home": "Główna",
     "about": "O mnie",
     "projects": "Projekty",
     "resume": "CV",

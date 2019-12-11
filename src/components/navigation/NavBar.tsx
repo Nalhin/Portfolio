@@ -7,6 +7,7 @@ const NavBar = () => {
 
   return (
     <nav>
+      <NavLink href={'/'}>{t('navigation.home')}</NavLink>
       <NavLink href={'/about'}>{t('navigation.about')}</NavLink>
       <NavLink href={'/projects'}>{t('navigation.projects')}</NavLink>
       <NavLink href={'/resume'}>{t('navigation.resume')}</NavLink>

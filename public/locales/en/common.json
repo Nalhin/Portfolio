@@ -1,6 +1,7 @@
 {
   "changeLanguage": "Change language",
   "navigation": {
+    "home": "Home",
     "about": "About",
     "projects": "Projects",
     "resume": "Resume",
