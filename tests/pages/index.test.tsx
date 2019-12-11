@@ -1,7 +1,7 @@
 import React from 'react';
-import Home from '../index';
-import { renderWithTranslations } from '../../../tests/utils/renderWithTranslation';
-import { mockGithubUser } from '../../../tests/fixtures/githubUser';
+import Home from '../../src/pages';
+import { renderWithTranslations } from '../utils/renderWithTranslation';
+import { mockGithubUser } from '../fixtures/githubUser';
 
 describe('Home', () => {
   it('Should display user data', () => {
