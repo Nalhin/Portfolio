@@ -1,11 +1,17 @@
 import React from 'react';
 import App from 'next/app';
-import { appWithTranslation } from '../i18n/i18n';
+import { appWithTranslation } from '../lib/i18n/i18n';
+import NavBar from '../components/navigation/NavBar';
 
 class MyApp extends App {
   render() {
     const { Component, pageProps } = this.props;
-    return <Component {...pageProps} />;
+    return (
+      <>
+        <NavBar />
+        <Component {...pageProps} />
+      </>
+    );
   }
 }
 

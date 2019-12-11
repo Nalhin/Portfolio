@@ -4,7 +4,6 @@ export const NextI18NextInstance = new NextI18Next({
   localePath: typeof window === 'undefined' ? 'public/locales' : 'locales',
   fallbackLng: 'en',
   defaultLanguage: 'en',
-  keySeparator: false,
   otherLanguages: ['pl'],
 });
 

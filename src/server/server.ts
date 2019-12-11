@@ -2,7 +2,7 @@ import next from 'next';
 import nextI18NextMiddleware from 'next-i18next/middleware';
 import compression from 'compression';
 import express from 'express';
-import { NextI18NextInstance } from '../i18n/i18n';
+import { NextI18NextInstance } from '../lib/i18n/i18n';
 
 const port = parseInt(process.env.PORT || '3000', 10);
 const dev = process.env.NODE_ENV !== 'production';

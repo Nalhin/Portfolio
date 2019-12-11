@@ -1,3 +1,9 @@
 {
-  "changeLanguage": "Change language"
+  "changeLanguage": "Change language",
+  "navigation": {
+    "about": "About",
+    "projects": "Projects",
+    "resume": "Resume",
+    "contact": "Contact"
+  }
 }

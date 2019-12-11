@@ -3,7 +3,7 @@ import { GithubUser } from '../interfaces/githubUser';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import styled from '@emotion/styled';
-import { withDefaultNamespaces } from '../i18n/withDefaultNamespaces';
+import { withDefaultNamespaces } from '../lib/i18n/withDefaultNamespaces';
 import { githubBaseUrl } from '../api/github/baseUrl';
 import 'isomorphic-fetch';
 
@@ -43,7 +43,6 @@ const Home: NextPage<Props> = ({ githubUser }) => {
 Home.getInitialProps = async () => {
   const res = await fetch(`${githubBaseUrl}/users/nalhin`);
   const githubUser = await res.json();
-
   return {
     githubUser,
     namespacesRequired: withDefaultNamespaces(),

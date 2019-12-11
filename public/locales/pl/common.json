@@ -1,4 +1,10 @@
 {
-  "changeLanguage": "Zmień język"
+  "changeLanguage": "Zmień język",
+  "navigation": {
+    "about": "O mnie",
+    "projects": "Projekty",
+    "resume": "CV",
+    "contact": "Kontakt"
+  }
 }
 
