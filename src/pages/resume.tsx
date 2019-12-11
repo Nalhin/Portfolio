@@ -5,7 +5,7 @@ const Resume = () => {
   return <div>Resume</div>;
 };
 
-Resume.getInitialProps = async () => {
+Resume.getInitialProps = () => {
   return {
     namespacesRequired: withDefaultNamespaces(['resume']),
   };

@@ -5,7 +5,7 @@ const Contact = () => {
   return <div>Contact</div>;
 };
 
-Contact.getInitialProps = async () => {
+Contact.getInitialProps = () => {
   return {
     namespacesRequired: withDefaultNamespaces(['contact']),
   };

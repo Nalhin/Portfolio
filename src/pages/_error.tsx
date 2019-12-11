@@ -6,7 +6,7 @@ import { withDefaultNamespaces } from '../lib/i18n/withDefaultNamespaces';
 const Error: NextPage = () => {
   const { t } = useTranslation();
 
-  return <div>{t('errorMessage')}</div>;
+  return <div>{t('_error:message')}</div>;
 };
 
 Error.getInitialProps = () => {
