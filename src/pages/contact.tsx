@@ -10,4 +10,5 @@ Contact.getInitialProps = () => {
     namespacesRequired: withDefaultNamespaces(['contact']),
   };
 };
+
 export default Contact;

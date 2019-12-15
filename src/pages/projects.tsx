@@ -1,6 +1,6 @@
 import React from 'react';
-import { withDefaultNamespaces } from '../lib/i18n/withDefaultNamespaces';
 import { useTranslation } from 'react-i18next';
+import { withDefaultNamespaces } from '../lib/i18n/withDefaultNamespaces';
 
 const Projects = () => {
   const { t } = useTranslation();

@@ -5,11 +5,7 @@ interface Props {
 }
 
 const Icon: React.FC<Props> = ({ name }) => {
-  return (
-    <svg className="icon">
-      <use xlinkHref={'#' + name} />
-    </svg>
-  );
+  return <img src={`/icons/${name}.svg`} width="40" height="40" alt={name} />;
 };
 
 export default Icon;

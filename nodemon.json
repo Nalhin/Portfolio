@@ -3,6 +3,6 @@
     "public/locales/**/*.json",
     "src/*.ts"
   ],
-  "exec": "ts-node --project tsconfig.server.json src/server/server.ts",
+  "exec": "ts-node --project tsconfig.server.json src/server/index.ts",
   "ext": "js ts"
 }

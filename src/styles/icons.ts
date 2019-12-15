@@ -1,0 +1,36 @@
+type iconsOptions = {
+  [key: string]: string;
+};
+
+export const icons: iconsOptions = {
+  angular: 'angular',
+  apollo: 'apollo',
+  archlinux: 'archlinux',
+  babel: 'babel',
+  codecov: 'codecov',
+  css: 'css',
+  express: 'express',
+  graphql: 'graphql',
+  html: 'html',
+  java: 'java',
+  javascript: 'javascript',
+  jest: 'jest',
+  mariadb: 'mariadb',
+  mongodb: 'mongodb',
+  mysql: 'mysql',
+  nextjs: 'nextjs',
+  nodejs: 'nodejs',
+  prettier: 'prettier',
+  python: 'python',
+  react: 'react',
+  reactivex: 'reactivex',
+  redux: 'redux',
+  reduxSaga: 'redux-saga',
+  sass: 'sass',
+  spring: 'spring',
+  travisCi: 'travis-ci',
+  typescript: 'typescript',
+  ubuntu: 'ubuntu',
+  webpack: 'webpack',
+  webstorm: 'webstorm',
+};

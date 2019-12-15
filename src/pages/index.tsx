@@ -5,7 +5,9 @@ import { useTranslation } from 'react-i18next';
 import styled from '@emotion/styled';
 import { withDefaultNamespaces } from '../lib/i18n/withDefaultNamespaces';
 import { githubBaseUrl } from '../api/github/baseUrl';
-import 'isomorphic-fetch';
+import 'isomorphic-unfetch';
+import Icon from '../components/icon/Icon';
+import { icons } from '../styles/icons';
 
 interface Props {
   githubUser: GithubUser;
@@ -35,6 +37,9 @@ const Home: NextPage<Props> = ({ githubUser }) => {
         {githubUser.public_repos}
         {githubUser.location}
         <StyledDiv>{githubUser.email}</StyledDiv>
+        {Object.keys(icons).map(icon => (
+          <Icon name={icons[icon]} key={icon} />
+        ))}
       </div>
     </div>
   );
