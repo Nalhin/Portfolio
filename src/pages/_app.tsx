@@ -18,7 +18,12 @@ class MyApp extends App<Props> {
       <ApolloProvider client={apolloClient}>
         <Layout>
           <AnimatePresence exitBeforeEnter>
-            <motion.div key={router.route} exit={{ opacity: 0 }}>
+            <motion.div
+              key={router.route}
+              exit={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              initial={{ opacity: 0 }}
+            >
               <Component {...pageProps} />
             </motion.div>
           </AnimatePresence>

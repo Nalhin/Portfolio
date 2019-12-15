@@ -16,7 +16,6 @@ interface ApolloOptions {
 }
 
 const authLink = setContext((_, { headers }) => {
-  console.log(process.env);
   return {
     headers: {
       ...headers,

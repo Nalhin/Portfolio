@@ -1,9 +1,8 @@
 export interface GithubUser {
   login: string;
-  avatar_url: string;
-  name: string;
+  avatarUrl: string;
+  url: string;
+  bio: string;
+  company: string;
   email: string;
-  location: string;
-  public_repos: string;
-  html_url: string;
 }

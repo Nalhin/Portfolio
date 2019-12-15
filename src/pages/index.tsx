@@ -4,13 +4,14 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import styled from '@emotion/styled';
 import { withDefaultNamespaces } from '../lib/i18n/withDefaultNamespaces';
-import { githubBaseUrl } from '../api/github/baseUrl';
 import 'isomorphic-unfetch';
 import Icon from '../components/icon/Icon';
 import { icons } from '../styles/icons';
+import { useQuery } from '@apollo/react-hooks';
+import { getUser } from '../lib/graphql/queries/getUser';
 
 interface Props {
-  githubUser: GithubUser;
+  // githubUser: GithubUser;
 }
 
 const StyledDiv = styled.div`
@@ -19,37 +20,52 @@ const StyledDiv = styled.div`
   height: 40px;
 `;
 
-const Home: NextPage<Props> = ({ githubUser }) => {
+type Response = {
+  user: GithubUser;
+};
+
+type InputProps = {
+  userLogin: string;
+};
+
+const Home: NextPage<Props> = () => {
   const { t, i18n } = useTranslation();
+
+  const { loading, data, error } = useQuery<Response, InputProps>(getUser, {
+    variables: { userLogin: 'Nalhin' },
+  });
 
   const changeLanguage = () => {
     i18n.changeLanguage(i18n.language === 'en' ? 'pl' : 'en').then();
   };
 
+  if (loading) {
+    return <div />;
+  }
+
+  if (error) {
+    return <p>Error: {JSON.stringify(error)}</p>;
+  }
+
   return (
     <div>
-      <div>
-        <button type="button" onClick={changeLanguage}>
-          {t('changeLanguage')}
-        </button>
-        <a href={githubUser.html_url}> {githubUser.name}</a>
-        <img src={githubUser.avatar_url} alt="github-image" />
-        {githubUser.public_repos}
-        {githubUser.location}
-        <StyledDiv>{githubUser.email}</StyledDiv>
-        {Object.keys(icons).map(icon => (
-          <Icon name={icons[icon]} key={icon} />
-        ))}
-      </div>
+      <button type="button" onClick={changeLanguage}>
+        {t('changeLanguage')}
+      </button>
+      <a href={data?.user.url}> {}</a>
+      <img src={data?.user.avatarUrl} alt="github-image" />
+      {data?.user.bio}
+      {data?.user.company}
+      <StyledDiv>{data?.user.email}</StyledDiv>
+      {Object.keys(icons).map(icon => (
+        <Icon name={icons[icon]} key={icon} />
+      ))}
     </div>
   );
 };
 
 Home.getInitialProps = async () => {
-  const res = await fetch(`${githubBaseUrl}/users/nalhin`);
-  const githubUser = await res.json();
   return {
-    githubUser,
     namespacesRequired: withDefaultNamespaces(),
   };
 };

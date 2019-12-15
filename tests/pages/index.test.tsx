@@ -5,9 +5,7 @@ import { mockGithubUser } from '../fixtures/githubUser';
 
 describe('Home', () => {
   it('Should display user data', () => {
-    const { getByText } = renderWithTranslations(
-      <Home githubUser={mockGithubUser} />,
-    );
+    const { getByText } = renderWithTranslations(<Home />);
 
     expect(getByText(mockGithubUser.name)).toBeTruthy();
   });

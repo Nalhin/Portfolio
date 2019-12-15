@@ -35,7 +35,7 @@ export const withApolloClient = (App: NextComponentType<{}, {}, AppProps>) => {
         appProps = await App.getInitialProps(ctx);
       }
 
-      if (isBrowser) {
+      if (!isBrowser) {
         try {
           await getDataFromTree(
             <App
@@ -46,6 +46,7 @@ export const withApolloClient = (App: NextComponentType<{}, {}, AppProps>) => {
             />,
           );
         } catch (error) {
+          console.log(error);
           if (error.message !== 'Product not found') {
             console.error(
               'Error while running `getDataFromTree`',
