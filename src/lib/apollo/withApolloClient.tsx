@@ -2,18 +2,15 @@ import React from 'react';
 import { NextComponentType, NextPageContext } from 'next';
 import { AppApolloClient, initApollo } from './apolloClient';
 import Head from 'next/head';
-import { getDataFromTree } from '@apollo/react-ssr';
+import { getMarkupFromTree } from '@apollo/react-ssr';
 import { isBrowser } from '../../utils/isBrowser';
 import { NormalizedCacheObject } from 'apollo-cache-inmemory';
 import { NextRouter } from 'next/router';
+import { renderToString } from 'react-dom/server';
+import { AppContextType } from 'next/dist/next-server/lib/utils';
 
 interface Props {
   apolloState: NormalizedCacheObject;
-}
-
-interface Context extends NextPageContext {
-  Component: React.Component;
-  router: NextRouter;
 }
 
 interface AppProps {
@@ -26,8 +23,8 @@ export const withApolloClient = (App: NextComponentType<{}, {}, AppProps>) => {
   return class Apollo extends React.Component<Props> {
     static displayName = 'withApollo(App)';
 
-    static async getInitialProps(ctx: Context) {
-      const { Component, router } = ctx;
+    static async getInitialProps(ctx: AppContextType) {
+      const { Component, router, AppTree } = ctx;
       const apolloClient = initApollo();
 
       let appProps = {};
@@ -37,14 +34,18 @@ export const withApolloClient = (App: NextComponentType<{}, {}, AppProps>) => {
 
       if (!isBrowser) {
         try {
-          await getDataFromTree(
-            <App
-              {...appProps}
-              Component={Component}
-              router={router}
-              apolloClient={apolloClient}
-            />,
-          );
+          await getMarkupFromTree({
+            renderFunction: renderToString,
+            tree: (
+              <AppTree
+                {...appProps}
+                pageProps={appProps}
+                Component={Component}
+                router={router}
+                apolloClient={apolloClient}
+              />
+            ),
+          });
         } catch (error) {
           console.log(error);
           if (error.message !== 'Product not found') {

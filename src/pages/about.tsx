@@ -5,7 +5,6 @@ import Icon from '../components/icon/Icon';
 
 const About = () => {
   const { t } = useTranslation();
-
   return (
     <div>
       {t('about:header')}
