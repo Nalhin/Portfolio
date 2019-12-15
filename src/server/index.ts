@@ -4,7 +4,7 @@ import compression from 'compression';
 import express from 'express';
 import { NextI18NextInstance } from '../lib/i18n/i18n';
 
-const port = parseInt(process.env.PORT || '3000', 10);
+const port = parseInt(process.env.PORT ?? '3000', 10);
 const dev = process.env.NODE_ENV !== 'production';
 const app = next({ dev });
 const handle = app.getRequestHandler();

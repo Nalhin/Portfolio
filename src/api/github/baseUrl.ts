@@ -1,1 +1,1 @@
-export const githubBaseUrl = 'https://api.github.com';
+export const githubBaseUrl = 'https://api.github.com/graphql';
