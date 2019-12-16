@@ -1,5 +1,5 @@
 import gql from 'graphql-tag';
-import { GithubUser } from '../../../interfaces/githubUser';
+import { GithubUser } from '../../../interfaces/GithubUser';
 
 const schema = gql`
   type Query {

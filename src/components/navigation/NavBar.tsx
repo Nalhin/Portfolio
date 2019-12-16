@@ -11,6 +11,7 @@ const NavBar = () => {
       <NavLink href={'/about'}>{t('navigation.about')}</NavLink>
       <NavLink href={'/projects'}>{t('navigation.projects')}</NavLink>
       <NavLink href={'/resume'}>{t('navigation.resume')}</NavLink>
+      <NavLink href={'/skills'}>{t('navigation.contact')}</NavLink>
       <NavLink href={'/contact'}>{t('navigation.contact')}</NavLink>
     </nav>
   );

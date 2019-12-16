@@ -1,5 +1,4 @@
 import { NextPage } from 'next';
-import { GithubUser } from '../interfaces/githubUser';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import styled from '@emotion/styled';
@@ -9,6 +8,7 @@ import Icon from '../components/icon/Icon';
 import { icons } from '../styles/icons';
 import { useQuery } from '@apollo/react-hooks';
 import { getUser } from '../lib/graphql/queries/getUser';
+import {GithubUser} from "../interfaces/GithubUser";
 
 interface Props {
   // githubUser: GithubUser;
@@ -58,7 +58,7 @@ const Home: NextPage<Props> = () => {
       {data?.user.company}
       <StyledDiv>{data?.user.email}</StyledDiv>
       {Object.keys(icons).map(icon => (
-        <Icon name={icons[icon]} key={icon} />
+        <Icon name={icons[icon].name} key={icon} />
       ))}
     </div>
   );
