@@ -35,7 +35,10 @@ const LanguageSwitcher = () => {
       <StyledDropDownContainer>
         {isOpen &&
           Object.keys(languages).map(language => (
-            <StyledDropDownItem onClick={() => changeLanguage(language)}>
+            <StyledDropDownItem
+              onClick={() => changeLanguage(language)}
+              key={language}
+            >
               {languages[language]}
             </StyledDropDownItem>
           ))}

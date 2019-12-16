@@ -9,6 +9,7 @@ import { icons } from '../constants/icons';
 import { useQuery } from '@apollo/react-hooks';
 import { getUser } from '../lib/graphql/queries/getUser';
 import { GithubUser } from '../interfaces/GithubUser';
+import { userLogin } from '../constants/userLogin';
 
 interface Props {
   // githubUser: GithubUser;
@@ -32,7 +33,7 @@ const Home: NextPage<Props> = () => {
   const { t } = useTranslation();
 
   const { loading, data, error } = useQuery<Response, InputProps>(getUser, {
-    variables: { userLogin: 'Nalhin' },
+    variables: { userLogin },
   });
 
   if (loading) {
@@ -45,7 +46,6 @@ const Home: NextPage<Props> = () => {
 
   return (
     <div>
-      <a href={data?.user.url}> {}</a>
       <img src={data?.user.avatarUrl} alt="github-image" />
       {data?.user.bio}
       {data?.user.company}

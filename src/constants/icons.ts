@@ -13,6 +13,7 @@ export const icons: iconsOptions = {
   css: { src: 'css', name: 'CSS' },
   emotion: { src: 'emotion', name: 'Emotion' },
   express: { src: 'express', name: 'Express' },
+  github: { src: 'github', name: 'Github' },
   graphql: { src: 'graphql', name: 'GraphQL' },
   html: { src: 'html', name: 'HTML' },
   intellijIdea: { src: 'intellij-idea', name: 'Intellij Idea' },
@@ -40,4 +41,5 @@ export const icons: iconsOptions = {
   visualStudioCode: { src: 'visual-studio-code', name: 'Visual Studio Code' },
   webpack: { src: 'webpack', name: 'Webpack' },
   webstorm: { src: 'webstorm', name: 'Webstorm' },
+  youtube: { src: 'youtube', name: 'Youtube' },
 };

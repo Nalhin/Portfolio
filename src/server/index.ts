@@ -25,9 +25,9 @@ const handle = app.getRequestHandler();
 
     try {
       await sendEmail({ email, name, subject, message });
-      console.log('success');
+      res.send({ message: 'message send' });
     } catch (e) {
-      console.log('failed', e);
+      res.status(401).send({ error: e });
     }
   });
 

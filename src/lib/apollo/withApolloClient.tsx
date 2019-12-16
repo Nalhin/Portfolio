@@ -47,7 +47,6 @@ export const withApolloClient = (App: NextComponentType<{}, {}, AppProps>) => {
             ),
           });
         } catch (error) {
-          console.log(error);
           if (error.message !== 'Product not found') {
             console.error(
               'Error while running `getDataFromTree`',
