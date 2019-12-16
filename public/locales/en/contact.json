@@ -1,1 +1,11 @@
-{}
+{
+  "contactHeader": "Contact Me",
+  "form": {
+    "name": "Name",
+    "email": "Email address",
+    "subject": "Subject",
+    "message": "Your message",
+    "send": "Wyślij"
+  },
+  "direct-email": "Or contact me directly"
+}

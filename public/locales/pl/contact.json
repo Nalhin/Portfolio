@@ -1,1 +1,11 @@
-{}
+{
+  "contactHeader": "Napisz do mnie",
+  "form": {
+    "name": "Imię",
+    "email": "Adres email",
+    "subject": "Temat",
+    "message": "Wiadomość",
+    "send": "Wyślij"
+  },
+  "direct-email": "Skontaktuj się bezpośrednio"
+}

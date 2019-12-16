@@ -5,10 +5,10 @@ import styled from '@emotion/styled';
 import { withDefaultNamespaces } from '../lib/i18n/withDefaultNamespaces';
 import 'isomorphic-unfetch';
 import Icon from '../components/icon/Icon';
-import { icons } from '../styles/icons';
+import { icons } from '../constants/icons';
 import { useQuery } from '@apollo/react-hooks';
 import { getUser } from '../lib/graphql/queries/getUser';
-import {GithubUser} from "../interfaces/GithubUser";
+import { GithubUser } from '../interfaces/GithubUser';
 
 interface Props {
   // githubUser: GithubUser;
@@ -29,15 +29,11 @@ type InputProps = {
 };
 
 const Home: NextPage<Props> = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   const { loading, data, error } = useQuery<Response, InputProps>(getUser, {
     variables: { userLogin: 'Nalhin' },
   });
-
-  const changeLanguage = () => {
-    i18n.changeLanguage(i18n.language === 'en' ? 'pl' : 'en').then();
-  };
 
   if (loading) {
     return <div />;
@@ -49,16 +45,13 @@ const Home: NextPage<Props> = () => {
 
   return (
     <div>
-      <button type="button" onClick={changeLanguage}>
-        {t('changeLanguage')}
-      </button>
       <a href={data?.user.url}> {}</a>
       <img src={data?.user.avatarUrl} alt="github-image" />
       {data?.user.bio}
       {data?.user.company}
       <StyledDiv>{data?.user.email}</StyledDiv>
       {Object.keys(icons).map(icon => (
-        <Icon name={icons[icon].name} key={icon} />
+        <Icon {...icons[icon]} key={icon} />
       ))}
     </div>
   );
