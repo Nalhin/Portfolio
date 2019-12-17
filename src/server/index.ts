@@ -6,6 +6,7 @@ import { NextI18NextInstance } from '../lib/i18n/i18n';
 import dotenv from 'dotenv';
 import { sendEmail } from './mailer';
 import bodyParser from 'body-parser';
+import { isEmpty } from '../utils/isEmpty';
 
 dotenv.config();
 const port = parseInt(process.env.PORT ?? '3000', 10);
@@ -21,11 +22,20 @@ const handle = app.getRequestHandler();
   server.use(bodyParser.json());
 
   server.post('/api/contact', async (req, res) => {
-    const { email = '', name = '', message = '', subject = '' } = req.body;
+    const { email, name, message, subject } = req.body;
+
+    if (
+      isEmpty(email) ||
+      isEmpty(name) ||
+      isEmpty(message) ||
+      isEmpty(subject)
+    ) {
+      res.status(400).send({ error: 'Empty field' });
+    }
 
     try {
       await sendEmail({ email, name, subject, message });
-      res.send({ message: 'message send' });
+      res.send({ message: 'Message send' });
     } catch (e) {
       res.status(401).send({ error: e });
     }

@@ -1,7 +1,12 @@
 import { myEmail } from '../constants/email';
-
-const sendmail = require('sendmail')();
 import { EmailMessage } from '../interfaces/EmailMessage';
+import nodemailer from 'nodemailer';
+
+const transporter = nodemailer.createTransport({
+  sendmail: true,
+  newline: 'unix',
+  path: '/usr/sbin/sendmail',
+});
 
 export const sendEmail = ({ email, name, subject, message }: EmailMessage) => {
   const mailOptions = {
@@ -12,7 +17,7 @@ export const sendEmail = ({ email, name, subject, message }: EmailMessage) => {
   };
 
   return new Promise((resolve, reject) => {
-    sendmail(mailOptions, (error: any, info: any) => {
+    transporter.sendMail(mailOptions, (error: any, info: any) => {
       if (error) {
         reject(error);
       }

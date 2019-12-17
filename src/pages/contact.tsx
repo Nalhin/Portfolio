@@ -29,6 +29,7 @@ const DEFAULT_CONTACT_FORM_STATE = {
 };
 
 const Contact = () => {
+  const [isError, setIsError] = React.useState();
   const [formState, setFormState] = React.useState<EmailMessage>(
     DEFAULT_CONTACT_FORM_STATE,
   );
@@ -39,11 +40,21 @@ const Contact = () => {
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     setFormState({ ...formState, [event.target.name]: event.target.value });
+    if (isError) {
+      setIsError(false);
+    }
   };
 
   const handleFormSubmit = async () => {
-    await fetchSendEmail(formState);
-    setFormState(DEFAULT_CONTACT_FORM_STATE);
+    try {
+      const message = await fetchSendEmail(formState);
+      if (message.status > 300) {
+        throw new Error();
+      }
+      setFormState(DEFAULT_CONTACT_FORM_STATE);
+    } catch (e) {
+      setIsError(true);
+    }
   };
 
   return (
@@ -73,6 +84,7 @@ const Contact = () => {
       </StyledForm>
       <button onClick={handleFormSubmit}>{t('contact:form.send')}</button>
       <a href={`mailto: ${myEmail}`}>{t('contact:direct-email')}</a>
+      {isError && <span>{t('_error:error-message')}</span>}
     </div>
   );
 };
