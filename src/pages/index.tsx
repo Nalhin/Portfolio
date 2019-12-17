@@ -5,7 +5,7 @@ import styled from '@emotion/styled';
 import { withDefaultNamespaces } from '../lib/i18n/withDefaultNamespaces';
 import 'isomorphic-unfetch';
 import Icon from '../components/icon/Icon';
-import { icons } from '../constants/icons';
+import { techStackIcons } from '../constants/techStackIcons';
 import { useQuery } from '@apollo/react-hooks';
 import { getUser } from '../lib/graphql/queries/getUser';
 import { GithubUser } from '../interfaces/GithubUser';
@@ -50,8 +50,8 @@ const Home: NextPage<Props> = () => {
       {data?.user.bio}
       {data?.user.company}
       <StyledDiv>{data?.user.email}</StyledDiv>
-      {Object.keys(icons).map(icon => (
-        <Icon {...icons[icon]} key={icon} />
+      {Object.keys(techStackIcons).map(icon => (
+        <Icon directory="techstack" {...techStackIcons[icon]} key={icon} />
       ))}
     </div>
   );

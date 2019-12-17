@@ -1,10 +1,21 @@
-import { SkillsIcon } from '../interfaces/SkillsIcon';
+import { TechStackIcon } from '../interfaces/TechStackIcon';
 
 type iconsOptions = {
-  [key: string]: SkillsIcon;
+  [key: string]: TechStackIcon;
 };
 
-export const icons: iconsOptions = {
+export const linkIcons = {
+  youtube: { src: 'youtube', name: 'Youtube', directory: 'link' },
+  github: { src: 'github', name: 'Github', directory: 'link' },
+  website: { src: 'web', name: 'Website', directory: 'link' },
+  websiteUnavailable: {
+    src: 'website-unavailable',
+    name: 'Website unavailable',
+    directory: 'link',
+  },
+};
+
+export const techStackIcons: iconsOptions = {
   angular: { src: 'angular', name: 'Angular' },
   apollo: { src: 'apollo', name: 'Apollo Client' },
   archlinux: { src: 'archlinux', name: 'Arch Linux' },
@@ -24,7 +35,7 @@ export const icons: iconsOptions = {
   mongodb: { src: 'mongodb', name: 'MongoDB' },
   mysql: { src: 'mysql', name: 'MySQL' },
   nextjs: { src: 'nextjs', name: 'Next.js' },
-  nodejs: { src: 'nodejs', name: 'Node.js' },
+  node: { src: 'nodejs', name: 'Node.js' },
   prettier: { src: 'prettier', name: 'Prettier' },
   pycharm: { src: 'pycharm', name: 'Pycharm' },
   python: { src: 'python', name: 'Python' },
@@ -35,11 +46,10 @@ export const icons: iconsOptions = {
   sass: { src: 'sass', name: 'Sass' },
   spring: { src: 'spring', name: 'Spring' },
   styledComponents: { src: 'styled-components', name: 'Styled Components' },
-  travisCi: { src: 'travis-ci', name: 'Travis CI' },
+  'travis-ci': { src: 'travis-ci', name: 'Travis CI' },
   typescript: { src: 'typescript', name: 'Typescript' },
   ubuntu: { src: 'ubuntu', name: 'Ubuntu' },
   visualStudioCode: { src: 'visual-studio-code', name: 'Visual Studio Code' },
   webpack: { src: 'webpack', name: 'Webpack' },
   webstorm: { src: 'webstorm', name: 'Webstorm' },
-  youtube: { src: 'youtube', name: 'Youtube' },
 };

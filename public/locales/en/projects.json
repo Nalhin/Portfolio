@@ -1,3 +1,27 @@
 {
-  "projectsTitle":"Lista moich projektów."
+  "projectPageTitle": "My projects.",
+  "flappyBird": {
+    "description": "Flappy Bird game with it's original assets."
+  },
+  "2048": {
+    "description": "My first React project - 2048 game."
+  },
+  "emoji": {
+    "description": "A website that allows users to find and copy any given emoji."
+  },
+  "imgur": {
+    "description": "A website that displays random images from imgur."
+  },
+  "colorPicker": {
+    "description": "Color Picker implementation in React."
+  },
+  "bookExchange": {
+    "description": "Official WPiA UJ 2019 BookExchange website. During the event, over 600 transactions were made using this website."
+  },
+  "pokemonTeams": {
+    "description": "A website that allows users to create teams consisting of over 600 unique pokemon."
+  },
+  "portfolio": {
+    "description": "My personal portfolio."
+  }
 }

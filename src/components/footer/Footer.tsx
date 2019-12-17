@@ -4,7 +4,7 @@ import {
   youtubeAddress,
 } from '../../constants/externalWebsiteLinks';
 import Icon from '../icon/Icon';
-import { icons } from '../../constants/icons';
+import { linkIcons, techStackIcons } from '../../constants/techStackIcons';
 import styled from '@emotion/styled';
 
 const StyledIconContainer = styled.div`
@@ -28,10 +28,10 @@ const Footer = () => {
     <footer>
       <StyledIconContainer>
         <a href={githubAddress} target="_blank">
-          <Icon {...icons.github} />
+          <Icon {...linkIcons.github} />
         </a>
         <a href={youtubeAddress} target="_blank">
-          <Icon {...icons.youtube} />
+          <Icon {...linkIcons.youtube} />
         </a>
       </StyledIconContainer>
       <StyledCopyright>

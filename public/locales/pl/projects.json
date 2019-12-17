@@ -1,3 +1,27 @@
 {
-  "projectsTitle":"Lista moich projektów."
+  "projectPageTitle": "Moje projekty.",
+  "flappyBird": {
+    "description": "Gra flappy bird z oryginalnymi modelami."
+  },
+  "2048": {
+    "description": "Mój pierwszy projekt w Reakcie - gra typu 2048."
+  },
+  "emoji": {
+    "description": "Strona pozwalająca znaleźć i skopiować dowolną emoji."
+  },
+  "imgur": {
+    "description": "Strona pozwalająca wyświetlić losowy obrazek dodany na serwis imgur."
+  },
+  "colorPicker": {
+    "description": "Implementacja narzędzia do wybierania kolorów w Reakcie."
+  },
+  "bookExchange": {
+    "description": "Oficialna strona gieldy podreczników WPiA UJ 2019. Podczas trwania giełdy za pomocą portalu przeprowadzono ponad 600 transkacji."
+  },
+  "pokemonTeams": {
+    "description": "Strona pozwalająca użytkownikom tworzenie własnych drużyn z bazy ponad 600 unikatowych pokemonów."
+  },
+  "portfolio": {
+    "description": "Moje portfolio.",
+  }
 }
