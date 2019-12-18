@@ -6,18 +6,14 @@ import 'isomorphic-unfetch';
 import { useTheme } from 'emotion-theming';
 import { Theme } from '../styles/theme';
 import styled from '../styles/styled';
-
-const StyledTitle = styled.div`
-  font-size: 120px;
-  text-align: center;
-`;
+import TypedTitle from '../components/typedTitle/TypedTitle';
 
 const StyledPrimaryColorText = styled.span`
   color: ${props => props.theme.colors.primary};
 `;
 
 const StyledSubtext = styled.div`
-  padding-top: ${props => props.theme.space.medium}px;
+  padding-top: ${props => props.theme.space.giga}px;
   text-align: center;
   font-size: ${props => props.theme.fontSizes.navigation}px;
   color: ${props => props.theme.colors.textSecondary};
@@ -28,11 +24,7 @@ const Home: NextPage = () => {
   const theme = useTheme<Theme>();
   return (
     <div>
-      <StyledTitle>
-        Hello I<StyledPrimaryColorText theme={theme}>/</StyledPrimaryColorText>,
-        <br />
-        World
-      </StyledTitle>
+      <TypedTitle />
       <StyledSubtext theme={theme}>
         {t('home:iam')}
         <br />

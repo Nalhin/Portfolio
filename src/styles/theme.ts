@@ -26,6 +26,7 @@ export const theme = {
     small: space[1],
     medium: space[2],
     large: space[3],
+    giga: space[4],
   },
   fontSizes: {
     body: fontSizes[2],
