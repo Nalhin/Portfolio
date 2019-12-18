@@ -13,6 +13,7 @@ export const linkIcons = {
     name: 'Website unavailable',
     directory: 'link',
   },
+  logo: { src: 'logo', name: 'Logo', directory: 'link' },
 };
 
 export const techStackIcons: iconsOptions = {

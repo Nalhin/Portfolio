@@ -1,17 +1,14 @@
 import React from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import styled from '@emotion/styled';
+import styled from '../../styles/styled';
+import { useTheme } from 'emotion-theming';
+import { Theme } from '../../styles/theme';
+import { StyledNavElement } from './NavElement';
 
-interface StyledLinkProps {
-  isActive: boolean;
-}
-
-const StyledLink = styled.a<StyledLinkProps>`
-  ${props => props.isActive && 'background:red;'}
-  &:hover {
-    cursor: pointer;
-  }
+const StyledNavLink = styled(StyledNavElement)`
+  margin: ${props => props.theme.space.large}px
+    ${props => props.theme.space.large}px;
 `;
 
 interface Props {
@@ -20,13 +17,16 @@ interface Props {
 
 const NavLink: React.FC<Props> = ({ href, children }) => {
   const router = useRouter();
+  const theme = useTheme<Theme>();
   const { pathname } = router;
 
   const isActive = pathname === href;
 
   return (
     <Link href={href}>
-      <StyledLink isActive={isActive}>{children}</StyledLink>
+      <StyledNavLink isActive={isActive} theme={theme}>
+        {children}
+      </StyledNavLink>
     </Link>
   );
 };

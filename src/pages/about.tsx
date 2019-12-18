@@ -4,7 +4,12 @@ import { useTranslation } from 'react-i18next';
 
 const About = () => {
   const { t } = useTranslation();
-  return <div>{t('about:header')}</div>;
+  return (
+    <div>
+      {t('about:header')}
+      {t('about:me')}
+    </div>
+  );
 };
 
 About.getInitialProps = () => {

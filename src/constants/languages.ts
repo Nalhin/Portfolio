@@ -3,6 +3,6 @@ type languagesOptions = {
 };
 
 export const languages: languagesOptions = {
-  en: 'English',
-  pl: 'Polish',
+  polish: 'pl',
+  english: 'en',
 };

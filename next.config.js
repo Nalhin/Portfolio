@@ -1,4 +1,5 @@
-const withImages = require('next-images')
+const withImages = require('next-images');
+require('dotenv').config();
 module.exports = withImages({
   webpack(config, options) {
     return config

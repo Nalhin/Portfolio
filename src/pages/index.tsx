@@ -1,65 +1,54 @@
 import { NextPage } from 'next';
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import styled from '@emotion/styled';
 import { withDefaultNamespaces } from '../lib/i18n/withDefaultNamespaces';
 import 'isomorphic-unfetch';
-import Icon from '../components/icon/Icon';
-import { techStackIcons } from '../constants/techStackIcons';
-import { useQuery } from '@apollo/react-hooks';
-import { getUser } from '../lib/graphql/queries/getUser';
-import { GithubUser } from '../interfaces/GithubUser';
-import { userLogin } from '../constants/userLogin';
+import { useTheme } from 'emotion-theming';
+import { Theme } from '../styles/theme';
+import styled from '../styles/styled';
 
-interface Props {
-  // githubUser: GithubUser;
-}
-
-const StyledDiv = styled.div`
-  background: aquamarine;
-  width: 40px;
-  height: 40px;
+const StyledTitle = styled.div`
+  font-size: 120px;
+  text-align: center;
 `;
 
-type Response = {
-  user: GithubUser;
-};
+const StyledPrimaryColorText = styled.span`
+  color: ${props => props.theme.colors.primary};
+`;
 
-type InputProps = {
-  userLogin: string;
-};
+const StyledSubtext = styled.div`
+  padding-top: ${props => props.theme.space.medium}px;
+  text-align: center;
+  font-size: ${props => props.theme.fontSizes.navigation}px;
+  color: ${props => props.theme.colors.textSecondary};
+`;
 
-const Home: NextPage<Props> = () => {
+const Home: NextPage = () => {
   const { t } = useTranslation();
-
-  const { loading, data, error } = useQuery<Response, InputProps>(getUser, {
-    variables: { userLogin },
-  });
-
-  if (loading) {
-    return <div />;
-  }
-
-  if (error) {
-    return <p>Error: {JSON.stringify(error)}</p>;
-  }
-
+  const theme = useTheme<Theme>();
   return (
     <div>
-      <img src={data?.user.avatarUrl} alt="github-image" />
-      {data?.user.bio}
-      {data?.user.company}
-      <StyledDiv>{data?.user.email}</StyledDiv>
-      {Object.keys(techStackIcons).map(icon => (
-        <Icon directory="techstack" {...techStackIcons[icon]} key={icon} />
-      ))}
+      <StyledTitle>
+        Hello I<StyledPrimaryColorText theme={theme}>/</StyledPrimaryColorText>,
+        <br />
+        World
+      </StyledTitle>
+      <StyledSubtext theme={theme}>
+        {t('home:iam')}
+        <br />
+        <StyledPrimaryColorText theme={theme}>
+          Krzysztof Olipra
+        </StyledPrimaryColorText>
+        <br />
+        Full Stack Developer.
+      </StyledSubtext>
     </div>
   );
 };
 
 Home.getInitialProps = async () => {
   return {
-    namespacesRequired: withDefaultNamespaces(),
+    namespacesRequired: withDefaultNamespaces(['home']),
   };
 };
 

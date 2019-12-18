@@ -17,6 +17,7 @@
     "apollo-link-context": "^1.0.19",
     "apollo-link-http": "^1.5.16",
     "body-parser": "^1.19.0",
+    "emotion-theming": "^10.0.19",
     "express": "^4.17.1",
     "framer-motion": "^1.7.0",
     "graphql": "^14.5.8",
