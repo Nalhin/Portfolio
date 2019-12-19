@@ -12,6 +12,9 @@ const StyledContainer = styled.div`
   margin-right: ${props => props.theme.space.large}px;
   justify-content: flex-end;
   flex: 1;
+  ${props => props.theme.mediaQueries.small} {
+    display: none;
+  }
 `;
 
 const StyledSeparator = styled.span`

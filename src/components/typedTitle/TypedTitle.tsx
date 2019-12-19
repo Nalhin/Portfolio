@@ -33,6 +33,10 @@ const StyledTypist = styled(Typist)`
     position: relative;
     top: -10px;
   }
+
+  ${props => props.theme.mediaQueries.small} {
+    font-size: 60px;
+  }
 `;
 
 const StyledPrimaryColorText = styled.span`

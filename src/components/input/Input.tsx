@@ -10,6 +10,8 @@ export const StyledContainer = styled.div`
 `;
 
 export const StyledLabel = styled.label`
+  pointer-events: none;
+
   position: absolute;
   top: ${props => props.theme.fontSizes.body}px;
   left: 0;

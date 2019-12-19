@@ -1,14 +1,14 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import NavLink from './NavLink';
 import LanguageSwitcher from './LanguageSwitcher';
 import styled from '../../styles/styled';
-import Link from 'next/link';
-import Icon from '../icon/Icon';
-import { linkIcons } from '../../constants/techStackIcons';
+
 import { Theme } from '../../styles/theme';
 import { useTheme } from 'emotion-theming';
 import Logo from './Logo';
+import { navAdresses } from './navAdresses';
+import MobileNav from './Mobile/MobileNav';
 
 const StyledNavigation = styled.nav`
   display: flex;
@@ -22,29 +22,32 @@ const StyledCenter = styled.div`
   flex-direction: row;
   justify-content: center;
   flex: 1;
+  ${props => props.theme.mediaQueries.small} {
+    display: none;
+  }
 `;
-
-const links = [
-  { href: '/', translation: 'navigation.home' },
-  { href: '/about', translation: 'navigation.about' },
-  { href: '/projects', translation: 'navigation.projects' },
-  { href: '/contact', translation: 'navigation.contact' },
-];
 
 const NavBar = () => {
   const { t } = useTranslation();
   const theme = useTheme<Theme>();
+  const [isMobileOpen, setMobileOpen] = React.useState(false);
+
+  const handleMobileOpen = () => {
+    setMobileOpen(!isMobileOpen);
+  };
+
   return (
-    <StyledNavigation theme={theme}>
+    <StyledNavigation>
       <Logo />
-      <StyledCenter>
-        {links.map(link => (
-          <NavLink href={link.href} key={link.href}>
-            {t(link.translation)}
+      <StyledCenter theme={theme}>
+        {navAdresses.map(address => (
+          <NavLink href={address.href} key={address.href}>
+            {t(address.translation)}
           </NavLink>
         ))}
       </StyledCenter>
       <LanguageSwitcher />
+      <MobileNav toggleMenu={handleMobileOpen} isMobileOpen={isMobileOpen} />
     </StyledNavigation>
   );
 };

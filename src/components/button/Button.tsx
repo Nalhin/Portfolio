@@ -10,7 +10,6 @@ const StyledButton = styled(motion.button)`
   text-decoration: none;
   text-align: center;
   letter-spacing: 0.5px;
-  text-transform: uppercase;
   border-radius: 20px;
   background-color: ${props => props.theme.colors.secondary};
   color: #fff;
