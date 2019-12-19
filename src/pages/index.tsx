@@ -7,6 +7,7 @@ import { useTheme } from 'emotion-theming';
 import { Theme } from '../styles/theme';
 import styled from '../styles/styled';
 import TypedTitle from '../components/typedTitle/TypedTitle';
+import ContributionShowcase from '../components/contributionShowcase/contributionShowcase';
 
 const StyledPrimaryColorText = styled.span`
   color: ${props => props.theme.colors.primary};
@@ -32,8 +33,9 @@ const Home: NextPage = () => {
           Krzysztof Olipra
         </StyledPrimaryColorText>
         <br />
-        Full Stack Developer.
+        Full Stack Developer
       </StyledSubtext>
+      <ContributionShowcase />
     </div>
   );
 };

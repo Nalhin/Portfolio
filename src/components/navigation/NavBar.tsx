@@ -8,13 +8,13 @@ import Icon from '../icon/Icon';
 import { linkIcons } from '../../constants/techStackIcons';
 import { Theme } from '../../styles/theme';
 import { useTheme } from 'emotion-theming';
+import Logo from './Logo';
 
 const StyledNavigation = styled.nav`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: ${props => props.theme.space.medium}px;
-  overflow: auto;
 `;
 
 const StyledCenter = styled.div`
@@ -24,27 +24,25 @@ const StyledCenter = styled.div`
   flex: 1;
 `;
 
-const StyledLogo = styled(Icon)`
-  cursor: pointer;
-`;
+const links = [
+  { href: '/', translation: 'navigation.home' },
+  { href: '/about', translation: 'navigation.about' },
+  { href: '/projects', translation: 'navigation.projects' },
+  { href: '/contact', translation: 'navigation.contact' },
+];
 
 const NavBar = () => {
   const { t } = useTranslation();
   const theme = useTheme<Theme>();
   return (
     <StyledNavigation theme={theme}>
-      <div>
-        <Link href={'/'}>
-          <div>
-            <StyledLogo {...linkIcons.logo} />
-          </div>
-        </Link>
-      </div>
+      <Logo />
       <StyledCenter>
-        <NavLink href={'/'}>{t('navigation.home')}</NavLink>
-        <NavLink href={'/about'}>{t('navigation.about')}</NavLink>
-        <NavLink href={'/projects'}>{t('navigation.projects')}</NavLink>
-        <NavLink href={'/contact'}>{t('navigation.contact')}</NavLink>
+        {links.map(link => (
+          <NavLink href={link.href} key={link.href}>
+            {t(link.translation)}
+          </NavLink>
+        ))}
       </StyledCenter>
       <LanguageSwitcher />
     </StyledNavigation>

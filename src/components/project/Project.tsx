@@ -41,7 +41,7 @@ const Project: React.FC<Props> = ({ project }) => {
       <h2>{project.name}</h2>
       <div>
         {project.repositoryTopics.nodes.map(top => (
-          <ProjectIcon topicNode={top} />
+          <ProjectIcon topicNode={top} key={top.topic.name} />
         ))}
       </div>
       <img

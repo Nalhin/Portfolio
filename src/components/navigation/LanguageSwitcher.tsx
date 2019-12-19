@@ -10,6 +10,8 @@ const StyledContainer = styled.div`
   display: flex;
   flex-direction: row;
   margin-right: ${props => props.theme.space.large}px;
+  justify-content: flex-end;
+  flex: 1;
 `;
 
 const StyledSeparator = styled.span`

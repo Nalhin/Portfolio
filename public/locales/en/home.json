@@ -1,3 +1,7 @@
 {
-  "iam": "I am"
+  "iam": "I am",
+  "myActivity": "My latest Github Activity",
+  "daily": "Daily",
+  "monthly": "Monthly",
+  "yearly": "Yearly"
 }

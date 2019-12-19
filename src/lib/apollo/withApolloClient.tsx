@@ -19,6 +19,22 @@ interface AppProps {
   apolloClient: AppApolloClient;
 }
 
+const getDates = () => {
+  const now = new Date();
+  const dayAgo = new Date();
+  dayAgo.setDate(now.getDate() - 1);
+  const monthAgo = new Date();
+  monthAgo.setMonth(now.getMonth() - 1);
+
+  return {
+    dateNow: now.toISOString(),
+    dateDayAgo: dayAgo.toISOString(),
+    dateMonthAgo: monthAgo.toISOString(),
+    __typename: 'dates',
+  };
+};
+const dates = getDates();
+
 export const withApolloClient = (App: NextComponentType<{}, {}, AppProps>) => {
   return class Apollo extends React.Component<Props> {
     static displayName = 'withApollo(App)';
@@ -26,6 +42,8 @@ export const withApolloClient = (App: NextComponentType<{}, {}, AppProps>) => {
     static async getInitialProps(ctx: AppContextType) {
       const { Component, router, AppTree } = ctx;
       const apolloClient = initApollo();
+
+      apolloClient.writeData({ data: { dates } });
 
       let appProps = {};
       if (App.getInitialProps) {

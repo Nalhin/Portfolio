@@ -20,9 +20,11 @@ const StyledTypist = styled(Typist)`
   height: 2em;
   line-height: 1em;
   padding: ${props => props.theme.space.giga}px 0;
+  font-family: 'Inconsolata', monospace;
 
   .Cursor {
     color: ${props => props.theme.colors.primary};
+    font-weight: ${props => props.theme.fontWeights.heading};
     display: inline-block;
     opacity: 1;
     animation: ${blink} 1s step-end infinite;
@@ -43,6 +45,7 @@ const TypedTitle = () => {
     <StyledTypist theme={theme} avgTypingDelay={100}>
       <span>
         Hello I<StyledPrimaryColorText theme={theme}>/</StyledPrimaryColorText>,
+        <Typist.Delay ms={500} />
         <br />
         There
         <Typist.Backspace count={5} delay={2000} />

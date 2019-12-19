@@ -9,7 +9,7 @@ interface Props {
 
 const IconWithLink: React.FC<Props> = ({ url, icon }) => {
   return (
-    <a href={url} target="_blank">
+    <a href={url} target="_blank" rel="noopener">
       <Icon {...icon} />
     </a>
   );

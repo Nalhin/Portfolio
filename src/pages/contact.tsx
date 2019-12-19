@@ -1,14 +1,25 @@
 import React from 'react';
 import { withDefaultNamespaces } from '../lib/i18n/withDefaultNamespaces';
 import { useTranslation } from 'react-i18next';
-import styled from '@emotion/styled';
 import { EmailMessage } from '../interfaces/EmailMessage';
 import { myEmail } from '../constants/email';
+import styled from '../styles/styled';
+import Input from '../components/input/Input';
+import Button from '../components/button/Button';
+import { Theme } from '../styles/theme';
+import { useTheme } from 'emotion-theming';
+import TextArea from '../components/textArea/TextArea';
 
 const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
   max-width: 200px;
+`;
+
+const StyledContainer = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 `;
 
 const fetchSendEmail = (data: EmailMessage) =>
@@ -28,6 +39,10 @@ const DEFAULT_CONTACT_FORM_STATE = {
   message: '',
 };
 
+const StyledLink = styled.a`
+  padding-top: ${props => props.theme.space.medium}px;
+`;
+
 const Contact = () => {
   const [isError, setIsError] = React.useState();
   const [formState, setFormState] = React.useState<EmailMessage>(
@@ -35,6 +50,7 @@ const Contact = () => {
   );
 
   const { t } = useTranslation();
+  const theme = useTheme<Theme>();
 
   const changeFormValue = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -46,46 +62,54 @@ const Contact = () => {
   };
 
   const handleFormSubmit = async () => {
+    setFormState(DEFAULT_CONTACT_FORM_STATE);
+
     try {
       const message = await fetchSendEmail(formState);
+
       if (message.status > 300) {
         throw new Error();
       }
-      setFormState(DEFAULT_CONTACT_FORM_STATE);
     } catch (e) {
       setIsError(true);
     }
   };
 
   return (
-    <div>
+    <StyledContainer>
       <h1>{t('contact:contactHeader')}</h1>
       <StyledForm>
-        <label>{t('contact:form.name')}</label>
-        <input onChange={changeFormValue} value={formState.name} name="name" />
-        <label>{t('contact:form.email')}</label>
-        <input
+        <Input
+          onChange={changeFormValue}
+          value={formState.name}
+          name="name"
+          label={t('contact:form.name')}
+        />
+        <Input
           onChange={changeFormValue}
           value={formState.email}
           name="email"
+          label={t('contact:form.email')}
         />
-        <label>{t('contact:form.subject')}</label>
-        <input
+        <Input
           onChange={changeFormValue}
           value={formState.subject}
           name="subject"
+          label={t('contact:form.subject')}
         />
-        <label>{t('contact:form.message')}</label>
-        <textarea
+        <TextArea
           onChange={changeFormValue}
           value={formState.message}
           name="message"
+          label={t('contact:form.message')}
         />
       </StyledForm>
-      <button onClick={handleFormSubmit}>{t('contact:form.send')}</button>
-      <a href={`mailto: ${myEmail}`}>{t('contact:direct-email')}</a>
+      <Button onClick={handleFormSubmit}>{t('contact:form.send')}</Button>
+      <StyledLink theme={theme} href={`mailto: ${myEmail}`}>
+        {t('contact:direct-email')}
+      </StyledLink>
       {isError && <span>{t('_error:error-message')}</span>}
-    </div>
+    </StyledContainer>
   );
 };
 

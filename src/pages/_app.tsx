@@ -9,7 +9,7 @@ import { AppApolloClient } from '../lib/apollo/apolloClient';
 import { Global, css } from '@emotion/core';
 import { ThemeProvider } from 'emotion-theming';
 import { globalStyles } from '../styles/global';
-import { Theme, theme } from '../styles/theme';
+import { theme } from '../styles/theme';
 
 interface Props {
   apolloClient: AppApolloClient;

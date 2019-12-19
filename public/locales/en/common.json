@@ -7,5 +7,11 @@
     "resume": "Resume",
     "skills": "Skills",
     "contact": "Contact"
+  },
+  "routes": {
+    "/": "Home",
+    "/about": "O mnie",
+    "/projects": "Projects",
+    "/contact": "Contact"
   }
 }

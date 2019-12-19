@@ -2,7 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { withDefaultNamespaces } from '../lib/i18n/withDefaultNamespaces';
 import { useQuery } from '@apollo/react-hooks';
-import { userLogin } from '../constants/userLogin';
+import { githubUserLogin } from '../constants/githubUserLogin';
 import {
   getRepositories,
   getRepositoriesById,

@@ -24,8 +24,8 @@ type InputProps = {
 };
 
 export const getUser = gql`
-  query getUserData($userLogin: String!) {
-    user(login: $userLogin) {
+  query getUserData($githubUserLogin: String!) {
+    user(login: $githubUserLogin) {
       login
       avatarUrl
       url
