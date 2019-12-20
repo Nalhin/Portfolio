@@ -1,11 +1,10 @@
-import styled from '../../styles/styled';
+import styled from '@emotion/styled';
 
 interface StyledNavElementProps {
   isActive: boolean;
 }
 
 export const StyledNavElement = styled.a<StyledNavElementProps>`
-  font-size: ${props => props.theme.fontSizes.body}px;
   margin: ${props => props.theme.space.large}px 0;
   white-space: nowrap;
 

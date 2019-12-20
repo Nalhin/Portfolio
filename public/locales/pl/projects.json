@@ -1,5 +1,8 @@
 {
-  "projectPageTitle": "Moje projekty.",
+  "projectPageTitle": "Moje projekty",
+  "preview":"Zobacz na żywo",
+  "viewCode":"Zobacz kod",
+
   "flappyBird": {
     "description": "Gra flappy bird z oryginalnymi modelami."
   },
@@ -23,5 +26,6 @@
   },
   "portfolio": {
     "description": "Moje portfolio.",
-  }
+  },
+
 }

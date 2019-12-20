@@ -4,9 +4,8 @@ import { getCommitActivity } from '../../lib/graphql/queries/getCommitActivity';
 import { githubUserLogin } from '../../constants/githubUserLogin';
 import { getDateFromCache } from '../../lib/graphql/queries/getDateFromCache';
 import { useTranslation } from 'react-i18next';
-import styled from '../../styles/styled';
-import { useTheme } from 'emotion-theming';
-import { Theme } from '../../styles/theme';
+import styled from '@emotion/styled';
+import { useTheme } from '@emotion/core';
 
 const StyledContainer = styled.div`
   margin-top: ${props => props.theme.space.giga}px;
@@ -25,7 +24,7 @@ const StyledTable = styled.table`
 
 const ContributionShowcase = () => {
   const { t } = useTranslation();
-  const theme = useTheme<Theme>();
+  const theme = useTheme();
   const client = useApolloClient();
 
   const datesData = client.readQuery({

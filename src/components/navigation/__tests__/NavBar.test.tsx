@@ -1,5 +1,5 @@
 //@ts-nocheck
-import { renderWithTranslations } from '../../../../tests/utils/renderWithTranslation';
+import { renderWithProviders } from '../../../../tests/utils/renderWithTranslation';
 import NavBar from '../NavBar';
 import React from 'react';
 import * as nextRouter from 'next/router';
@@ -9,8 +9,8 @@ nextRouter.useRouter.mockImplementation(() => ({ route: '/' }));
 
 describe('NavBar', () => {
   it('Should display text', () => {
-    const { getByText } = renderWithTranslations(<NavBar />);
+    const { queryAllByText } = renderWithProviders(<NavBar />);
 
-    expect(getByText('navigation.about')).toBeTruthy();
+    expect(queryAllByText('navigation.about')).toBeTruthy();
   });
 });

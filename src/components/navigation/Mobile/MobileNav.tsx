@@ -1,11 +1,10 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { useDimensions } from '../useDimentions';
 import { motion } from 'framer-motion';
 import MobileToggle from './MobileToggle';
 import MobileMenu from './MobileMenu';
-import styled from '../../../styles/styled';
-import { Theme } from '../../../styles/theme';
-import { useTheme } from 'emotion-theming';
+import styled from '@emotion/styled';
+import { useTheme } from '@emotion/core';
 
 const sidebar = (height: number, width: number) => {
   if (height && width)
@@ -42,20 +41,18 @@ const StyledBackground = styled(motion.div)`
   bottom: 0;
   left: 0;
   background: #fff;
+  display: block;
 `;
 
 const StyledContainer = styled(motion.div)`
   display: none;
-  z-index: 2000;
-  pointer-events: none;
-
   ${props => props.theme.mediaQueries.small} {
     display: block;
   }
 `;
 
 const MobileNav: React.FC<Props> = ({ toggleMenu, isMobileOpen }) => {
-  const theme = useTheme<Theme>();
+  const theme = useTheme();
   const { height, width } = useDimensions();
 
   return (

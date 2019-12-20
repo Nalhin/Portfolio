@@ -1,10 +1,9 @@
 import React from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import styled from '../../styles/styled';
-import { useTheme } from 'emotion-theming';
-import { Theme } from '../../styles/theme';
 import { StyledNavElement } from './NavElement';
+import styled from '@emotion/styled';
+import { useTheme } from '@emotion/core';
 
 const StyledNavLink = styled(StyledNavElement)`
   margin: ${props => props.theme.space.large}px
@@ -17,7 +16,7 @@ interface Props {
 
 const NavLink: React.FC<Props> = ({ href, children }) => {
   const router = useRouter();
-  const theme = useTheme<Theme>();
+  const theme = useTheme();
   const { pathname } = router;
 
   const isActive = pathname === href;

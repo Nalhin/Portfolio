@@ -3,14 +3,13 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { withDefaultNamespaces } from '../lib/i18n/withDefaultNamespaces';
 import 'isomorphic-unfetch';
-import { useTheme } from 'emotion-theming';
-import { Theme } from '../styles/theme';
-import styled from '../styles/styled';
 import TypedTitle from '../components/typedTitle/TypedTitle';
 import ContributionShowcase from '../components/contributionShowcase/contributionShowcase';
+import styled from '@emotion/styled';
+import { useTheme } from '@emotion/core';
 
 const StyledPrimaryColorText = styled.span`
-  color: ${props => props.theme.colors.primary};
+  color: ${props => props.theme.colors.secondary};
 `;
 
 const StyledSubtext = styled.div`
@@ -22,7 +21,7 @@ const StyledSubtext = styled.div`
 
 const Home: NextPage = () => {
   const { t } = useTranslation();
-  const theme = useTheme<Theme>();
+  const theme = useTheme();
   return (
     <div>
       <TypedTitle />

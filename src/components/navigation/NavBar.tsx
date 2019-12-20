@@ -1,20 +1,22 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { useTranslation } from 'react-i18next';
 import NavLink from './NavLink';
 import LanguageSwitcher from './LanguageSwitcher';
-import styled from '../../styles/styled';
-
-import { Theme } from '../../styles/theme';
-import { useTheme } from 'emotion-theming';
 import Logo from './Logo';
 import { navAdresses } from './navAdresses';
 import MobileNav from './Mobile/MobileNav';
+import styled from '@emotion/styled';
+import { useTheme } from '@emotion/core';
 
 const StyledNavigation = styled.nav`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: ${props => props.theme.space.medium}px;
+  min-height: 56px;
+  position: sticky;
+  top: 0;
+  background: ${props => props.theme.colors.foreground};
+  z-index: 1000;
 `;
 
 const StyledCenter = styled.div`
@@ -29,7 +31,7 @@ const StyledCenter = styled.div`
 
 const NavBar = () => {
   const { t } = useTranslation();
-  const theme = useTheme<Theme>();
+  const theme = useTheme();
   const [isMobileOpen, setMobileOpen] = React.useState(false);
 
   const handleMobileOpen = () => {

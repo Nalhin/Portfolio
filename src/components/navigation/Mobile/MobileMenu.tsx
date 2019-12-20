@@ -1,16 +1,18 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { navAdresses } from '../navAdresses';
-import styled from '../../../styles/styled';
 import { motion } from 'framer-motion';
-import MobileLink from './MobileLink';
+import MobileLink, { linkVariants } from './MobileLink';
+import styled from '@emotion/styled';
+import LanguageSwitcher from '../LanguageSwitcher';
+import { useTheme } from '@emotion/core';
 
 interface StyledProps {
   isMobileOpen: boolean;
 }
 
 const StyledContainer = styled(motion.ul)<StyledProps>`
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
@@ -20,13 +22,15 @@ const StyledContainer = styled(motion.ul)<StyledProps>`
   justify-content: center;
   flex-direction: column;
   pointer-events: ${props => (props.isMobileOpen ? 'all' : 'none')};
+  font-size: ${props => props.theme.fontSizes.navigation}px;
 `;
+
 const variants = {
   open: {
     transition: { staggerChildren: 0.1, delayChildren: 0.2 },
   },
   closed: {
-    transition: { staggerChildren: 0.2 },
+    transition: { staggerChildren: 0.1 },
   },
 };
 
@@ -35,8 +39,19 @@ interface Props {
   isMobileOpen: boolean;
 }
 
+const StyledLanguageSwitcher = styled(LanguageSwitcher, {
+  shouldForwardProp: prop => prop !== 'theme',
+})`
+  ${props => props.theme.mediaQueries.small} {
+    display: block;
+  }
+  margin-right: 0;
+  text-align: center;
+`;
+
 const MobileMenu: React.FC<Props> = ({ toggleMenu, isMobileOpen }) => {
   const { t } = useTranslation();
+  const theme = useTheme();
 
   return (
     <StyledContainer variants={variants} isMobileOpen={isMobileOpen}>
@@ -45,6 +60,9 @@ const MobileMenu: React.FC<Props> = ({ toggleMenu, isMobileOpen }) => {
           {t(address.translation)}
         </MobileLink>
       ))}
+      <motion.div variants={linkVariants}>
+        <StyledLanguageSwitcher onClick={toggleMenu} theme={theme} />
+      </motion.div>
     </StyledContainer>
   );
 };

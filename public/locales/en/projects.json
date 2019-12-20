@@ -1,5 +1,7 @@
 {
-  "projectPageTitle": "My projects.",
+  "projectPageTitle": "My projects",
+    "preview":"Live preview",
+    "viewCode":"View code",
   "flappyBird": {
     "description": "Flappy Bird game with it's original assets."
   },

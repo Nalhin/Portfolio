@@ -7,6 +7,7 @@ import dotenv from 'dotenv';
 import { sendEmail } from './mailer';
 import bodyParser from 'body-parser';
 import { isEmpty } from '../utils/isEmpty';
+import { isAnyFormFieldEmpty } from '../utils/isFormFieldEmpty';
 
 dotenv.config();
 const port = parseInt(process.env.PORT ?? '3000', 10);
@@ -24,12 +25,7 @@ const handle = app.getRequestHandler();
   server.post('/api/contact', async (req, res) => {
     const { email, name, message, subject } = req.body;
 
-    if (
-      isEmpty(email) ||
-      isEmpty(name) ||
-      isEmpty(message) ||
-      isEmpty(subject)
-    ) {
+    if (isAnyFormFieldEmpty({ email, name, message, subject })) {
       res.status(400).send({ error: 'Empty field' });
     }
 

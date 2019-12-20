@@ -2,15 +2,18 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { withDefaultNamespaces } from '../lib/i18n/withDefaultNamespaces';
 import { useQuery } from '@apollo/react-hooks';
-import { githubUserLogin } from '../constants/githubUserLogin';
-import {
-  getRepositories,
-  getRepositoriesById,
-} from '../lib/graphql/queries/getRepositories';
+import { getRepositoriesById } from '../lib/graphql/queries/getRepositories';
 import Project from '../components/project/Project';
 import { RepositoryProject } from '../interfaces/RepositoryProject';
-import { GithubUser } from '../interfaces/GithubUser';
 import { displayedProjects } from '../constants/displayedProjects';
+import styled from '@emotion/styled';
+
+const StyledContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
 
 type Response = {
   nodes: RepositoryProject[];
@@ -25,7 +28,7 @@ const id = Array.from(displayedProjects.keys());
 const Projects = () => {
   const { t } = useTranslation();
 
-  const { loading, data, error } = useQuery<Response, InputProps>(
+  const { loading, data } = useQuery<Response, InputProps>(
     getRepositoriesById,
     {
       variables: { id },
@@ -37,9 +40,11 @@ const Projects = () => {
   return (
     <div>
       <h1>{t('projects:projectPageTitle')}</h1>
-      {data?.nodes.map(project => (
-        <Project project={project} key={project.name} />
-      ))}
+      <StyledContainer>
+        {data?.nodes.map(project => (
+          <Project project={project} key={project.name} />
+        ))}
+      </StyledContainer>
     </div>
   );
 };

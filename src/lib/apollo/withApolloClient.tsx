@@ -1,5 +1,5 @@
 import React from 'react';
-import { NextComponentType, NextPageContext } from 'next';
+import { NextComponentType } from 'next';
 import { AppApolloClient, initApollo } from './apolloClient';
 import Head from 'next/head';
 import { getMarkupFromTree } from '@apollo/react-ssr';
@@ -43,14 +43,14 @@ export const withApolloClient = (App: NextComponentType<{}, {}, AppProps>) => {
       const { Component, router, AppTree } = ctx;
       const apolloClient = initApollo();
 
-      apolloClient.writeData({ data: { dates } });
-
       let appProps = {};
       if (App.getInitialProps) {
         appProps = await App.getInitialProps(ctx);
       }
 
       if (!isBrowser) {
+        apolloClient.writeData({ data: { dates } });
+
         try {
           await getMarkupFromTree({
             renderFunction: renderToString,

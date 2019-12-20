@@ -4,8 +4,11 @@
     "name": "Name",
     "email": "Email address",
     "subject": "Subject",
-    "message": "Your message",
+    "message": "Message",
     "send": "Wyślij"
   },
-  "direct-email": "Or contact me directly"
+  "directContact": "Contact me directly",
+  "formFieldEmpty": "There was an empty field!",
+  "serverError": "Mailing service is offline!",
+  "invalidEmail": "Invalid email address"
 }

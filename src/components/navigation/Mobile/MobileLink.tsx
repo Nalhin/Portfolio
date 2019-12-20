@@ -1,10 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import styled from '../../../styles/styled';
 import { useRouter } from 'next/router';
+import styled from '@emotion/styled';
 
-const variants = {
+export const linkVariants = {
   open: {
     y: 0,
     opacity: 1,
@@ -38,10 +38,6 @@ const StyledLink = styled(motion.li)<StyledLink>`
     transform: ${props => (props.isActive ? 'scaleX(1)' : 'scaleX(0)')};
     background: ${props => props.theme.colors.primary};
   }
-
-  &:hover {
-    cursor: pointer;
-  }
 `;
 
 interface Props {
@@ -56,7 +52,7 @@ const MobileLink: React.FC<Props> = ({ href, children, onClick }) => {
 
   return (
     <Link href={href}>
-      <StyledLink variants={variants} onClick={onClick} isActive={isActive}>
+      <StyledLink variants={linkVariants} onClick={onClick} isActive={isActive}>
         {children}
       </StyledLink>
     </Link>

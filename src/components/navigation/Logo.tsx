@@ -1,10 +1,9 @@
 import React from 'react';
-import styled from '../../styles/styled';
 import Link from 'next/link';
 import { linkIcons } from '../../constants/techStackIcons';
 import Icon from '../icon/Icon';
-import { Theme } from '../../styles/theme';
-import { useTheme } from 'emotion-theming';
+import styled from '@emotion/styled';
+import { useTheme } from '@emotion/core';
 
 const StyledContainer = styled.div`
   flex: 1;
@@ -16,7 +15,7 @@ const StyledLogo = styled(Icon)`
 `;
 
 const Logo = () => {
-  const theme = useTheme<Theme>();
+  const theme = useTheme();
   return (
     <StyledContainer>
       <Link href={'/'}>

@@ -1,8 +1,7 @@
 import React from 'react';
 import { motion, Transition, Variants } from 'framer-motion';
-import styled from '../../../styles/styled';
-import { Theme } from '../../../styles/theme';
-import { useTheme } from 'emotion-theming';
+import styled from '@emotion/styled';
+import { useTheme } from '@emotion/core';
 
 interface PathProps {
   d?: string;
@@ -22,11 +21,8 @@ const Path: React.FC<PathProps> = props => (
 
 const StyledButton = styled.button`
   pointer-events: all;
-  position: absolute;
-  display: none;
+  position: relative;
   outline: none;
-  left: calc(100% - 40px);
-  top: 0;
   border: none;
   user-select: none;
   cursor: pointer;
@@ -34,10 +30,9 @@ const StyledButton = styled.button`
   height: 50px;
   border-radius: 50%;
   background: transparent;
-
-  ${props => props.theme.mediaQueries.small} {
-    display: block;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 interface Props {
@@ -45,7 +40,7 @@ interface Props {
 }
 
 const MobileToggle: React.FC<Props> = ({ onClick }) => {
-  const theme = useTheme<Theme>();
+  const theme = useTheme();
 
   return (
     <StyledButton onClick={onClick} theme={theme}>

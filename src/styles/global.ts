@@ -27,6 +27,7 @@ ${reset}
   body {
   font-family: 'Poppins', sans-serif;
   height:100%;
+  background:#f8f8f8;
 }
 #__next{
   height:100%

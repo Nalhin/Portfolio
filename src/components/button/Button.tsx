@@ -1,10 +1,8 @@
 import React from 'react';
-import styled from '../../styles/styled';
-import { Theme } from '../../styles/theme';
-import { useTheme } from 'emotion-theming';
-import { motion, useAnimation } from 'framer-motion';
+import styled from '@emotion/styled';
+import { useTheme } from '@emotion/core';
 
-const StyledButton = styled(motion.button)`
+export const StyledButton = styled.button`
   border: 0;
   outline: 0;
   text-decoration: none;
@@ -36,7 +34,7 @@ interface Props {
 }
 
 const Button: React.FC<Props> = ({ onClick, children }) => {
-  const theme = useTheme<Theme>();
+  const theme = useTheme();
 
   return (
     <StyledButton theme={theme} onClick={onClick}>

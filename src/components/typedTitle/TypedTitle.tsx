@@ -1,9 +1,7 @@
 import React from 'react';
 import Typist from 'react-typist';
-import { Theme } from '../../styles/theme';
-import { useTheme } from 'emotion-theming';
-import { keyframes } from '@emotion/core';
-import styled from '../../styles/styled';
+import { keyframes, useTheme } from '@emotion/core';
+import styled from '@emotion/styled';
 
 const blink = keyframes`
     0% { opacity:1; }
@@ -44,7 +42,7 @@ const StyledPrimaryColorText = styled.span`
 `;
 
 const TypedTitle = () => {
-  const theme = useTheme<Theme>();
+  const theme = useTheme();
   return (
     <StyledTypist theme={theme} avgTypingDelay={100}>
       <span>

@@ -5,6 +5,7 @@ const colors = {
   foreground: '#ffffff',
   primary: '#fdd023',
   secondary: '#ff4081', //#232EFC
+  error: '#f44336',
 };
 
 const space = [0, 4, 8, 16, 32];
@@ -27,8 +28,10 @@ export const theme = {
     giga: space[4],
   },
   fontSizes: {
+    footer: fontSizes[1],
     body: fontSizes[2],
     navigation: fontSizes[3],
+    title: fontSizes[4],
     display: fontSizes[5],
   },
   mediaQueries: {
@@ -41,5 +44,3 @@ export const theme = {
       '0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12),0 3px 1px -2px rgba(0, 0, 0, 0.2);',
   },
 };
-
-export type Theme = typeof theme;

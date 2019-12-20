@@ -3,8 +3,8 @@ import React from 'react';
 interface Props {
   name?: string;
   src: string;
-  width?: string;
-  height?: string;
+  width?: number;
+  height?: number;
   directory?: string;
   className?: string;
 }

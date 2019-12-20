@@ -1,10 +1,9 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { languages } from '../../constants/languages';
-import { Theme } from '../../styles/theme';
-import { useTheme } from 'emotion-theming';
 import { StyledNavElement } from './NavElement';
-import styled from '../../styles/styled';
+import styled from '@emotion/styled';
+import { useTheme } from '@emotion/core';
 
 const StyledContainer = styled.div`
   display: flex;
@@ -21,16 +20,26 @@ const StyledSeparator = styled.span`
   text-align: center;
   margin: ${props => props.theme.space.large}px
     ${props => props.theme.space.medium}px 0;
+
+  ${props => props.theme.mediaQueries.small} {
+    display: none;
+  }
 `;
 
-const LanguageSwitcher = () => {
+interface Props {
+  onClick?: () => void;
+  className?: string;
+}
+
+const LanguageSwitcher: React.FC<Props> = ({ onClick, className }) => {
   const [isOpen, setIsOpen] = React.useState(false);
 
   const { i18n } = useTranslation();
-  const theme = useTheme<Theme>();
+  const theme = useTheme();
 
   const handleChangeOpen = () => {
     setIsOpen(!isOpen);
+    onClick && onClick();
   };
 
   const changeLanguage = (language: string) => {
@@ -38,7 +47,7 @@ const LanguageSwitcher = () => {
   };
 
   return (
-    <StyledContainer theme={theme}>
+    <StyledContainer theme={theme} className={className}>
       <StyledNavElement
         onClick={() => changeLanguage(languages.polish)}
         isActive={i18n.language === languages.polish}

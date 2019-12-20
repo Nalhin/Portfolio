@@ -7,5 +7,8 @@
     "message": "Wiadomość",
     "send": "Wyślij"
   },
-  "direct-email": "Skontaktuj się bezpośrednio"
+  "directContact": "Skontaktuj się bezpośrednio",
+  "formFieldEmpty": "Wypelnij każde pole!",
+  "serverError": "Serwis poczty jest offline!",
+  "invalidEmail": "Niepoprawny adres email!"
 }

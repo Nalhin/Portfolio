@@ -1,7 +1,6 @@
 import React from 'react';
-import styled from '../../styles/styled';
-import { useTheme } from 'emotion-theming';
-import { Theme } from '../../styles/theme';
+import styled from '@emotion/styled';
+import { useTheme } from '@emotion/core';
 
 export const StyledContainer = styled.div`
   position: relative;
@@ -11,7 +10,6 @@ export const StyledContainer = styled.div`
 
 export const StyledLabel = styled.label`
   pointer-events: none;
-
   position: absolute;
   top: ${props => props.theme.fontSizes.body}px;
   left: 0;
@@ -26,50 +24,6 @@ export const StyledLabel = styled.label`
 interface StyledTextAreaProps {
   isEmpty: boolean;
 }
-
-export const StyledInput = styled.input<StyledTextAreaProps>`
-  -webkit-appearance: none;
-  width: 100%;
-  border: 0;
-  font-family: inherit;
-  height: 48px;
-  font-size: ${props => props.theme.fontSizes.body}px;
-  font-weight: ${props => props.theme.fontWeights.body};
-  border-bottom: 1px solid ${props => props.theme.colors.textSecondary};
-  background: none;
-  border-radius: 0;
-  color: ${props => props.theme.colors.textPrimary};
-  transition: all 0.2s ease;
-  position: relative;
-
-  & ~ .input__label {
-    ${props =>
-      !props.isEmpty &&
-      `
-      color: ${(props: any) => props.theme.colors.textSecondary};
-      transform: translateY(-26px) scale(0.75);
-      `}
-  }
-
-  &:focus {
-    background: none;
-    outline: none;
-    & ~ .input__label {
-      color: ${props => props.theme.colors.secondary};
-      transform: translateY(-26px) scale(0.75);
-    }
-
-    & ~ .input__bottom-border__colored {
-      transform: scaleX(1);
-    }
-  }
-  &:hover,
-  &:focus {
-    & ~ .input__bottom-border__hover {
-      background: ${props => props.theme.colors.textPrimary};
-    }
-  }
-`;
 
 export const StyledBorder = styled.div`
   position: absolute;
@@ -93,6 +47,50 @@ const StyledHoverBorder = styled(StyledBorder)`
   z-index: 1;
 `;
 
+export const StyledInput = styled.input<StyledTextAreaProps>`
+  -webkit-appearance: none;
+  width: 100%;
+  border: 0;
+  padding: 0;
+  height: 48px;
+  font-size: ${props => props.theme.fontSizes.body}px;
+  font-weight: ${props => props.theme.fontWeights.body};
+  border-bottom: 1px solid ${props => props.theme.colors.textSecondary};
+  background: none;
+  border-radius: 0;
+  color: ${props => props.theme.colors.textPrimary};
+  transition: all 0.2s ease;
+  position: relative;
+
+  & ~ ${StyledLabel} {
+    ${props =>
+      !props.isEmpty &&
+      `
+      color: ${(props: any) => props.theme.colors.textSecondary};
+      transform: translateY(-26px) scale(0.75);
+      `}
+  }
+
+  &:focus {
+    background: none;
+    outline: none;
+    & ~ ${StyledLabel} {
+      color: ${props => props.theme.colors.secondary};
+      transform: translateY(-26px) scale(0.75);
+    }
+
+    & ~ ${StyledColoredBorder} {
+      transform: scaleX(1);
+    }
+  }
+  &:hover,
+  &:focus {
+    & ~ ${StyledHoverBorder} {
+      background: ${props => props.theme.colors.textPrimary};
+    }
+  }
+`;
+
 interface Props {
   name: string;
   value: string;
@@ -101,7 +99,7 @@ interface Props {
 }
 
 const Input: React.FC<Props> = ({ name, value, onChange, label }) => {
-  const theme = useTheme<Theme>();
+  const theme = useTheme();
   const isEmpty = value === '';
 
   return (

@@ -1,11 +1,11 @@
 import React from 'react';
 import NavBar from '../navigation/NavBar';
 import Footer from '../footer/Footer';
-import styled from '../../styles/styled';
 import Head from 'next/head';
+import styled from '@emotion/styled';
 
 const StyledContainer = styled.div`
-  height: 100%;
+  min-height: 100%;
   display: flex;
   flex-direction: column;
 `;

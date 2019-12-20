@@ -1,11 +1,11 @@
 import React from 'react';
 import Home from '../../src/pages';
-import { renderWithTranslations } from '../utils/renderWithTranslation';
+import { renderWithProviders } from '../utils/renderWithTranslation';
 import { mockGithubUser } from '../fixtures/githubUser';
 
 describe('Home', () => {
   it('Should display user data', () => {
-    const { getByText } = renderWithTranslations(<Home />);
+    const { getByText } = renderWithProviders(<Home />);
 
     expect(getByText(mockGithubUser.name)).toBeTruthy();
   });

@@ -6,10 +6,10 @@ import Layout from '../components/layout/layout';
 import { withApolloClient } from '../lib/apollo/withApolloClient';
 import { ApolloProvider } from '@apollo/react-common';
 import { AppApolloClient } from '../lib/apollo/apolloClient';
-import { Global, css } from '@emotion/core';
-import { ThemeProvider } from 'emotion-theming';
+import { Global, css, ThemeProvider } from '@emotion/core';
 import { globalStyles } from '../styles/global';
 import { theme } from '../styles/theme';
+import styled from '@emotion/styled';
 
 interface Props {
   apolloClient: AppApolloClient;
@@ -17,6 +17,10 @@ interface Props {
 
 const global = css`
   ${globalStyles}
+`;
+
+const StyledContainer = styled(motion.div)`
+  padding-bottom: 8px;
 `;
 
 class MyApp extends App<Props> {
@@ -28,14 +32,14 @@ class MyApp extends App<Props> {
         <ThemeProvider theme={theme}>
           <Layout>
             <AnimatePresence exitBeforeEnter>
-              <motion.div
+              <StyledContainer
                 key={router.route}
                 exit={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 initial={{ opacity: 0 }}
               >
                 <Component {...pageProps} />
-              </motion.div>
+              </StyledContainer>
             </AnimatePresence>
           </Layout>
         </ThemeProvider>

@@ -1,5 +1,5 @@
 //@ts-nocheck
-import { renderWithTranslations } from '../../../../tests/utils/renderWithTranslation';
+import { renderWithProviders } from '../../../../tests/utils/renderWithTranslation';
 import React from 'react';
 import NavLink from '../NavLink';
 import * as nextRouter from 'next/router';
@@ -11,7 +11,7 @@ describe('NavLink', () => {
   it('Should display text', () => {
     const test = 'test';
 
-    const { getByText } = renderWithTranslations(
+    const { getByText } = renderWithProviders(
       <NavLink href={'/'}>{test}</NavLink>,
     );
 

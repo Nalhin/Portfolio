@@ -8,14 +8,16 @@ interface Props {
 }
 
 const StyledIcon = styled(Icon)`
-  margin: 0 8px;
+  padding: 2px;
 `;
 
 const ProjectIcon: React.FC<Props> = ({ topicNode }) => {
   const { name } = topicNode.topic;
   const icon = techStackIcons[name];
   if (icon) {
-    return <StyledIcon {...icon} directory="techstack" />;
+    return (
+      <StyledIcon {...icon} directory="techstack" width={26} height={26} />
+    );
   }
   return null;
 };

@@ -3,23 +3,33 @@ import { withDefaultNamespaces } from '../lib/i18n/withDefaultNamespaces';
 import { useTranslation } from 'react-i18next';
 import { EmailMessage } from '../interfaces/EmailMessage';
 import { myEmail } from '../constants/email';
-import styled from '../styles/styled';
 import Input from '../components/input/Input';
 import Button from '../components/button/Button';
-import { Theme } from '../styles/theme';
-import { useTheme } from 'emotion-theming';
 import TextArea from '../components/textArea/TextArea';
+import styled from '@emotion/styled';
+import { useTheme } from '@emotion/core';
+import { isAnyFormFieldEmpty } from '../utils/isFormFieldEmpty';
+import { isEmailValid } from '../utils/isEmailValid';
 
 const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
-  max-width: 200px;
+  max-width: 300px;
 `;
 
 const StyledContainer = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
+  padding-top: ${props => props.theme.space.large}px;
+`;
+
+const StyledError = styled.span`
+  display: flex;
+  align-items: center;
+  color: ${props => props.theme.colors.error};
+  padding-top: ${props => props.theme.space.medium}px;
+  height: 1em;
 `;
 
 const fetchSendEmail = (data: EmailMessage) =>
@@ -44,24 +54,34 @@ const StyledLink = styled.a`
 `;
 
 const Contact = () => {
-  const [isError, setIsError] = React.useState();
+  const [error, setError] = React.useState('');
   const [formState, setFormState] = React.useState<EmailMessage>(
     DEFAULT_CONTACT_FORM_STATE,
   );
 
   const { t } = useTranslation();
-  const theme = useTheme<Theme>();
+  const theme = useTheme();
 
   const changeFormValue = (
     event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     setFormState({ ...formState, [event.target.name]: event.target.value });
-    if (isError) {
-      setIsError(false);
+    if (error) {
+      setError('');
     }
   };
 
   const handleFormSubmit = async () => {
+    if (isAnyFormFieldEmpty(formState)) {
+      setError('contact:formFieldEmpty');
+      return;
+    }
+
+    if (!isEmailValid(formState.email)) {
+      setError('contact:invalidEmail');
+      return;
+    }
+
     setFormState(DEFAULT_CONTACT_FORM_STATE);
 
     try {
@@ -71,12 +91,12 @@ const Contact = () => {
         throw new Error();
       }
     } catch (e) {
-      setIsError(true);
+      setError('contact:serverError');
     }
   };
 
   return (
-    <StyledContainer>
+    <StyledContainer theme={theme}>
       <h1>{t('contact:contactHeader')}</h1>
       <StyledForm>
         <Input
@@ -105,10 +125,10 @@ const Contact = () => {
         />
       </StyledForm>
       <Button onClick={handleFormSubmit}>{t('contact:form.send')}</Button>
+      <StyledError theme={theme}>{t(error)}</StyledError>
       <StyledLink theme={theme} href={`mailto: ${myEmail}`}>
-        {t('contact:direct-email')}
+        {t('contact:directContact')}
       </StyledLink>
-      {isError && <span>{t('_error:error-message')}</span>}
     </StyledContainer>
   );
 };
