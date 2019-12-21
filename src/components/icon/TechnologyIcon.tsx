@@ -7,6 +7,7 @@ import { TechStackIcon } from '../../interfaces/TechStackIcon';
 
 const StyledIcon = styled(Icon)`
   padding: 2px;
+  pointer-events: none;
 `;
 
 const StyledTooltip = styled(motion.span)`
