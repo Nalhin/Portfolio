@@ -1,7 +1,7 @@
 {
   "projectPageTitle": "Moje projekty",
-  "preview":"Zobacz na żywo",
-  "viewCode":"Zobacz kod",
+  "preview": "Zobacz na żywo",
+  "viewCode": "Zobacz kod",
 
   "flappyBird": {
     "description": "Gra flappy bird z oryginalnymi modelami."
@@ -25,7 +25,9 @@
     "description": "Strona pozwalająca użytkownikom tworzenie własnych drużyn z bazy ponad 600 unikatowych pokemonów."
   },
   "portfolio": {
-    "description": "Moje portfolio.",
+    "description": "Moje portfolio."
   },
-
+  "chess": {
+    "description": "Pokoje gier miedzy użytkownikami stworzone w architekturze microserwisowej. Gra i chat wykonane przy uzyciu websocketow w Java Springu."
+  }
 }

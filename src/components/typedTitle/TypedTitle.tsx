@@ -17,7 +17,7 @@ const StyledTypist = styled(Typist)`
   white-space: nowrap;
   height: 2em;
   line-height: 1em;
-  padding: ${props => props.theme.space.giga}px 0;
+  padding: ${props => props.theme.space.giga * 2}px 0;
   font-family: 'Inconsolata', monospace;
 
   .Cursor {

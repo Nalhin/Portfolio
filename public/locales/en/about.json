@@ -1,10 +1,11 @@
 {
+  "githubAccount": "Github Account",
   "hello": "Hello",
   "me": "My name is Krzysztof Olipra. I'm a full-stack developer who specializes in designing complex web applications.",
   "currently": "Currently, I am a second year student in Information Technology and Econometrics.",
-  "history": "I've been coding since high school, but recently it truly became my passion. My whole life I have always been keen on self-improvement, and I feel like programming has been made for me. You always have something new to learn, you never feel like you have wasted your time and there are always new challenges every day.",
+  "history": "I've been coding since high school, but recently it truly became my passion. My whole life I have always been keen on self-improvement, and thus I feel like programming has been made for me. You always have something new to learn, you never feel like you have wasted your time and there are always new challenges every day.",
   "passion": "One could say, that programming became my passion.",
-  "technologies": "Technologies I have worked with",
+  "technologies": "Technologies I have worked with.",
   "noSkills": "I tend to believe skill self-evaluation is biased, hence I will omit it.",
-  "comportableWith": ""
+  "whatImLearning": "What I'm learning."
 }

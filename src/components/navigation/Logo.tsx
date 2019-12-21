@@ -7,6 +7,9 @@ import { useTheme } from '@emotion/core';
 
 const StyledContainer = styled.div`
   flex: 1;
+  ${props => props.theme.mediaQueries.small} {
+    flex: none;
+  }
 `;
 
 const StyledLogo = styled(Icon)`
@@ -17,7 +20,7 @@ const StyledLogo = styled(Icon)`
 const Logo = () => {
   const theme = useTheme();
   return (
-    <StyledContainer>
+    <StyledContainer theme={theme}>
       <Link href={'/'}>
         <a>
           <StyledLogo {...linkIcons.logo} theme={theme} />

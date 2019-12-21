@@ -21,7 +21,7 @@ export const StyledButton = styled.button`
   padding: 0 22px;
   cursor:pointer;
   position:relative;
-
+  user-select:none;
 
   &:hover {
     box-shadow: ${props => props.theme.boxShadow.hover}

@@ -7,6 +7,11 @@ import TypedTitle from '../components/typedTitle/TypedTitle';
 import ContributionShowcase from '../components/contributionShowcase/contributionShowcase';
 import styled from '@emotion/styled';
 import { useTheme } from '@emotion/core';
+import { useQuery } from '@apollo/react-hooks';
+import { getLatestActivity } from '../lib/graphql/queries/getLastestActivity';
+import { githubUserLogin } from '../constants/githubUserLogin';
+import { extractCommits } from '../utils/extractCommits';
+import CommitHistory from '../components/commitHistory/CommitHistory';
 
 const StyledPrimaryColorText = styled.span`
   color: ${props => props.theme.colors.secondary};
@@ -22,6 +27,12 @@ const StyledSubtext = styled.div`
 const Home: NextPage = () => {
   const { t } = useTranslation();
   const theme = useTheme();
+
+  const { data } = useQuery(getLatestActivity, {
+    variables: { githubUserLogin },
+  });
+
+  const commits = React.useMemo(() => extractCommits(data), [data]);
   return (
     <div>
       <TypedTitle />
@@ -35,6 +46,7 @@ const Home: NextPage = () => {
         Full Stack Developer
       </StyledSubtext>
       <ContributionShowcase />
+      <CommitHistory commits={commits} />
     </div>
   );
 };

@@ -3,5 +3,6 @@
   "myActivity": "My latest Github Activity",
   "daily": "Daily",
   "monthly": "Monthly",
-  "yearly": "Yearly"
+  "yearly": "Yearly",
+  "latestCommits":"Latest commits"
 }

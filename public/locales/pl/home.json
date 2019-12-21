@@ -3,5 +3,7 @@
   "myActivity": "Moja aktywność na Githubie",
   "daily": "Dzienna",
   "monthly": "Miesieczna",
-  "yearly": "Roczna"
+  "yearly": "Roczna",
+  "latestCommits":"Ostatnie commity"
+
 }

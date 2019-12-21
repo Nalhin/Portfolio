@@ -7,6 +7,7 @@ import { navAdresses } from './navAdresses';
 import MobileNav from './Mobile/MobileNav';
 import styled from '@emotion/styled';
 import { useTheme } from '@emotion/core';
+import { useRouter } from 'next/router';
 
 const StyledNavigation = styled.nav`
   display: flex;
@@ -29,9 +30,25 @@ const StyledCenter = styled.div`
   }
 `;
 
+const StyledMobileText = styled.span`
+  display: none;
+  ${props => props.theme.mediaQueries.small} {
+    display: block;
+  }
+  padding-top: ${props => props.theme.space.large - 2}px;
+  font-size: ${props => props.theme.fontSizes.navigation}px;
+  z-index: 1000;
+  user-select: none;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+`;
+
 const NavBar = () => {
   const { t } = useTranslation();
   const theme = useTheme();
+  const router = useRouter();
   const [isMobileOpen, setMobileOpen] = React.useState(false);
 
   const handleMobileOpen = () => {
@@ -49,6 +66,9 @@ const NavBar = () => {
         ))}
       </StyledCenter>
       <LanguageSwitcher />
+      <StyledMobileText theme={theme}>
+        {t(`common:routes.${router.pathname}`)}
+      </StyledMobileText>
       <MobileNav toggleMenu={handleMobileOpen} isMobileOpen={isMobileOpen} />
     </StyledNavigation>
   );

@@ -10,7 +10,7 @@ const sidebar = (height: number, width: number) => {
   if (height && width)
     return {
       open: {
-        clipPath: `circle(${height + 80}px at ${width - 40}px 40px) `,
+        clipPath: `circle(${height + 80}px at ${width - 40}px 20px) `,
         transition: {
           type: 'spring',
           stiffness: 20,
@@ -18,7 +18,7 @@ const sidebar = (height: number, width: number) => {
         },
       },
       closed: {
-        clipPath: `circle(30px at ${width - 40}px 40px )`,
+        clipPath: `circle(30px at ${width - 40}px 20px )`,
         transition: {
           delay: 0.5,
           type: 'spring',

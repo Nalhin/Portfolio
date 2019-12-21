@@ -1,7 +1,7 @@
 {
   "projectPageTitle": "My projects",
-    "preview":"Live preview",
-    "viewCode":"View code",
+  "preview": "Live preview",
+  "viewCode": "View code",
   "flappyBird": {
     "description": "Flappy Bird game with it's original assets."
   },
@@ -25,5 +25,8 @@
   },
   "portfolio": {
     "description": "My personal portfolio."
+  },
+  "chess": {
+    "description": "Chess game rooms with microservice architecture. Game and chat implemented with websocket technology in Java Spring."
   }
 }

@@ -1,4 +1,5 @@
 export const displayedProjects = new Map([
+  ['MDEwOlJlcG9zaXRvcnkyMjAzMzA2MjU=', 'chess'],
   ['MDEwOlJlcG9zaXRvcnkyMjY5ODY1Nzc=', 'portfolio'],
   ['MDEwOlJlcG9zaXRvcnkyMTA0NTE5NzY=', 'pokemonTeams'],
   ['MDEwOlJlcG9zaXRvcnkyMDU1Njc5Mzc=', 'bookExchange'],
