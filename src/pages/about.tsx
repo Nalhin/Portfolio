@@ -42,11 +42,12 @@ const StyledCardSection = styled(StyledCard)`
   display: flex;
   align-items: flex-start;
   margin: ${props => props.theme.space.large}px auto;
-  padding: ${props => props.theme.space.large * 2}px;
+  padding: ${props => props.theme.space.large}px;
 `;
 
 const StyledText = styled.span`
   text-align: center;
+  display: block;
 `;
 
 const StyledSectionWrapper = styled.section`

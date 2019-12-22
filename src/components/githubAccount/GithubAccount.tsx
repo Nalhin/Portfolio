@@ -18,7 +18,7 @@ export const StyledContainer = styled(StyledCard)`
   margin: ${props => props.theme.space.large}px 0
     ${props => props.theme.space.large}px ${props => props.theme.space.large}px;
   ${props => props.theme.mediaQueries.medium} {
-    margin: 0;
+    margin: auto;
   }
 `;
 

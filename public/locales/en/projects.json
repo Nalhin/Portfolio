@@ -24,7 +24,7 @@
     "description": "A website that allows users to create teams consisting of over 600 unique pokemon."
   },
   "portfolio": {
-    "description": "My personal portfolio."
+    "description": "My personal portfolio in nextjs. Data used in project comes from Github GraphQL API integrated with apollo client."
   },
   "chess": {
     "description": "Chess game rooms with microservice architecture. Game and chat implemented with websocket technology in Java Spring."
