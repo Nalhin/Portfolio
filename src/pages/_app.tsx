@@ -6,7 +6,7 @@ import Layout from '../components/layout/layout';
 import { withApolloClient } from '../lib/apollo/withApolloClient';
 import { ApolloProvider } from '@apollo/react-common';
 import { AppApolloClient } from '../lib/apollo/apolloClient';
-import { Global, css, ThemeProvider } from '@emotion/core';
+import { css, Global, ThemeProvider } from '@emotion/core';
 import { globalStyles } from '../styles/global';
 import { theme } from '../styles/theme';
 import styled from '@emotion/styled';
@@ -20,7 +20,7 @@ const global = css`
 `;
 
 const StyledContainer = styled(motion.div)`
-  padding-bottom: 8px;
+  padding-bottom: 32px;
 `;
 
 class MyApp extends App<Props> {

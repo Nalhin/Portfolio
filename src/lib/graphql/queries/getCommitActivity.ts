@@ -20,6 +20,3 @@ export const getCommitActivity = gql`
     }
   }
 `;
-
-const xd =
-  'My goal is to display a list of 10 most recent commits with associated repo';

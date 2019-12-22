@@ -5,7 +5,7 @@
     "email": "Email address",
     "subject": "Subject",
     "message": "Message",
-    "send": "Wyślij"
+    "send": "Send"
   },
   "directContact": "Contact me directly",
   "formFieldEmpty": "There was an empty field!",

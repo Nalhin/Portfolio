@@ -18,6 +18,7 @@ const StyledNavigation = styled.nav`
   top: 0;
   background: ${props => props.theme.colors.foreground};
   z-index: 1000;
+  box-shadow: ${props => props.theme.boxShadow.navigation};
 `;
 
 const StyledCenter = styled.div`

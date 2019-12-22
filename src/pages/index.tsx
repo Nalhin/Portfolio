@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { withDefaultNamespaces } from '../lib/i18n/withDefaultNamespaces';
 import 'isomorphic-unfetch';
 import TypedTitle from '../components/typedTitle/TypedTitle';
-import ContributionShowcase from '../components/contributionShowcase/contributionShowcase';
+import ContributionShowcase from '../components/contributionShowcase/ContributionShowcase';
 import styled from '@emotion/styled';
 import { useTheme } from '@emotion/core';
 import { useQuery } from '@apollo/react-hooks';
@@ -28,11 +28,12 @@ const Home: NextPage = () => {
   const { t } = useTranslation();
   const theme = useTheme();
 
-  const { data } = useQuery(getLatestActivity, {
+  const { loading, data } = useQuery(getLatestActivity, {
     variables: { githubUserLogin },
   });
 
   const commits = React.useMemo(() => extractCommits(data), [data]);
+
   return (
     <div>
       <TypedTitle />
@@ -46,7 +47,7 @@ const Home: NextPage = () => {
         Full Stack Developer
       </StyledSubtext>
       <ContributionShowcase />
-      <CommitHistory commits={commits} />
+      <CommitHistory commits={commits} loading={loading} />
     </div>
   );
 };

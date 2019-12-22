@@ -10,6 +10,7 @@ declare module '@emotion/core' {
       primary: string;
       secondary: string;
       error: string;
+      placeholder: string;
     };
     breakpoints: string[];
     fontWeights: {
@@ -36,6 +37,7 @@ declare module '@emotion/core' {
     };
     boxShadow: {
       hover: string;
+      navigation: string;
     };
   }
 }

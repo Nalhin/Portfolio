@@ -12,7 +12,7 @@ const StyledLanguagesContainer = styled.div`
   flex-direction: row;
 `;
 
-const StyledCommitCard = styled(StyledCard)`
+export const StyledCommitCard = styled(StyledCard)`
   margin: ${props => props.theme.space.medium}px;
   width: 300px;
   text-align: center;
@@ -23,8 +23,11 @@ const StyledA = styled.a`
   color: ${props => props.theme.colors.textPrimary};
 `;
 
-const StyledSpan = styled.span`
+const StyledDate = styled.span`
   color: ${props => props.theme.colors.textSecondary};
+  align-self: flex-end;
+  font-size: ${props => props.theme.fontSizes.footer}px;
+  padding-top: ${props => props.theme.space.small}px;
 `;
 
 interface Props {
@@ -54,7 +57,7 @@ const CommitCard: React.FC<Props> = React.memo(({ commit }) => {
       <StyledA href={commit.url} target="_blank" rel="noopener" theme={theme}>
         {commit.message}
       </StyledA>
-      <StyledSpan theme={theme}>{convertDate(commit.committedDate)}</StyledSpan>
+      <StyledDate theme={theme}>{convertDate(commit.committedDate)}</StyledDate>
     </StyledCommitCard>
   );
 });

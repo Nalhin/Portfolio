@@ -1,4 +1,4 @@
-import gql from 'graphql-tag';
+import gql from "graphql-tag";
 
 export const getLatestActivity = gql`
   query getLatestActivity($githubUserLogin: String!) {
@@ -10,7 +10,7 @@ export const getLatestActivity = gql`
       company
       email
       repositories(
-        first: 3
+        first: 10
         orderBy: { field: PUSHED_AT, direction: DESC }
         privacy: PUBLIC
       ) {

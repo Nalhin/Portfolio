@@ -10,18 +10,22 @@ import styled from '@emotion/styled';
 import { useTheme } from '@emotion/core';
 import { isAnyFormFieldEmpty } from '../utils/isFormFieldEmpty';
 import { isEmailValid } from '../utils/isEmailValid';
+import { StyledCard } from '../components/card/StyledCart';
+import { StyledHeader } from '../components/header/header';
 
 const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
-  max-width: 300px;
 `;
 
-const StyledContainer = styled.div`
+const StyledContainer = styled(StyledCard)`
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding-top: ${props => props.theme.space.large}px;
+  margin-top: ${props => props.theme.space.large}px;
+  padding: ${props => props.theme.space.large}px;
+  width: calc(90% - ${props => props.theme.space.large * 2}px);
+  max-width: ${props => props.theme.space.large * 2 + 300}px;
 `;
 
 const StyledError = styled.span`
@@ -97,7 +101,7 @@ const Contact = () => {
 
   return (
     <StyledContainer theme={theme}>
-      <h1>{t('contact:contactHeader')}</h1>
+      <StyledHeader>{t('contact:contactHeader')}</StyledHeader>
       <StyledForm>
         <Input
           onChange={changeFormValue}

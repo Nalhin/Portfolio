@@ -1,9 +1,9 @@
-import React from 'react';
-import { useTheme } from '@emotion/core';
-import styled from '@emotion/styled';
-import Icon from './Icon';
-import { motion } from 'framer-motion';
-import { TechStackIcon } from '../../interfaces/TechStackIcon';
+import React from "react";
+import { useTheme } from "@emotion/core";
+import styled from "@emotion/styled";
+import Icon from "./Icon";
+import { motion } from "framer-motion";
+import { TechStackIcon } from "../../interfaces/TechStackIcon";
 
 const StyledIcon = styled(Icon)`
   padding: 2px;
@@ -38,8 +38,9 @@ const StyledTooltip = styled(motion.span)`
   }
 `;
 
-const StyledContainer = styled(motion.span)`
+const StyledContainer = styled(motion.div)`
   position: relative;
+  display: inline-block;
   cursor: pointer;
 `;
 

@@ -1,4 +1,23 @@
 {
-  "githubAccount": "Github Account",
-  "hello": "Hello"
+  "githubAccount": "Konto Github",
+  "me": "Nazywam sie Krzysztof Olipra. Jestem full-stack deweloperem, który specializuje się w tworzeniu kompleksowych aplikacji webnowych.",
+  "currently": "W tym momencie studiuje na drugim roku Informatyki i Ekonometrii (AGH).",
+  "history": "Moje przygoda z kodzeniem rozpoczeła się w technikum, ale ostatnimi czasy kodzenie sotalo moją pasją. Zawsze lubiłem możliwości samodoskonalenia, dlatego uważam, że świetnie nadaję sie do programowania. Zawsze mozna się czegoś nowego nauczyć, wszystko można zrobić lepiej, a każdy nowy dzień wiąże się z nowymi wyzwaniami.",
+  "technologies": "Technologie z którymi pracowałem.",
+  "skills": {
+    "title": "Umiejętności",
+    "noSkillRating": "Uważam, że ocenianie swoich umiejętności jest zbytnio nieobiektywne, dlatego je pominę.",
+    "technologiesIKnow": "Technologie, które znam",
+    "technologiesImLearning": "Technologies, które wciąż sie uczę/nie mam doświadczenia (w losowej kolejności)",
+    "whatImLearning": "Czego się uczę",
+    "technologies": "Technologie",
+    "languages": "Języki",
+    "react": "React",
+    "styling": "Style",
+    "runtime": "Środowisko uruchomieniowe",
+    "testing": "Tesowanie",
+    "databases": "Bazy danych",
+    "systems": "Systemy",
+    "other": "Inne"
+  }
 }

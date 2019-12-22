@@ -12,12 +12,14 @@ import styled from '@emotion/styled';
 import { useTheme } from '@emotion/core';
 
 const StyledFooted = styled.footer`
+  background: ${props => props.theme.colors.foreground};
   margin-top: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: ${props => props.theme.space.large}px 0
     ${props => props.theme.space.medium}px;
+  box-shadow: ${props => props.theme.boxShadow.navigation};
 
   font-size: ${props => props.theme.fontSizes.footer}px;
   &:before {

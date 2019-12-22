@@ -6,6 +6,7 @@ import { getDateFromCache } from '../../lib/graphql/queries/getDateFromCache';
 import { useTranslation } from 'react-i18next';
 import styled from '@emotion/styled';
 import { useTheme } from '@emotion/core';
+import ContributionShowcasePlaceholder from './ContributionShowcasePlaceholder';
 
 const StyledContainer = styled.div`
   margin-top: ${props => props.theme.space.giga}px;
@@ -31,9 +32,17 @@ const ContributionShowcase = () => {
     query: getDateFromCache,
   });
 
-  const { data } = useQuery(getCommitActivity, {
+  const { loading, data } = useQuery(getCommitActivity, {
     variables: { githubUserLogin, ...datesData.dates },
   });
+
+  if (loading) {
+    return (
+      <StyledContainer theme={theme}>
+        <ContributionShowcasePlaceholder />
+      </StyledContainer>
+    );
+  }
 
   return (
     <StyledContainer theme={theme}>

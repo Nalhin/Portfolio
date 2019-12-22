@@ -10,14 +10,16 @@ import ProjectLink from './ProjectLink';
 import { StyledCard } from '../card/StyledCart';
 import { techStackIcons } from '../../constants/techStackIcons';
 import TechnologyIcon from '../icon/TechnologyIcon';
+import Image from '../image/Image';
 
 const StyledProject = StyledCard.withComponent(motion.div);
 
-const StyledProjectCart = styled(StyledProject)`
+export const StyledProjectCart = styled(StyledProject)`
   margin-top: ${props => props.theme.space.large}px;
+  width: 500px;
 `;
 
-const StyledImage = styled.img`
+const StyledImage = styled(Image)`
   max-width: 100%;
   max-height: 400px;
 `;
@@ -53,10 +55,6 @@ const Project: React.FC<Props> = ({ project }) => {
       theme={theme}
     >
       <StyledTitle>{project.name}</StyledTitle>
-      <StyledImage
-        src={`/images/projects/${projectName}.jpg`}
-        alt={project.name}
-      />
       <div>
         {project.repositoryTopics.nodes.map(top => {
           const { name } = top.topic;
@@ -64,6 +62,10 @@ const Project: React.FC<Props> = ({ project }) => {
           return icon && <TechnologyIcon icon={icon} key={name} />;
         })}
       </div>
+      <StyledImage
+        src={`/images/projects/${projectName}.jpg`}
+        alt={project.name}
+      />
       <StyledDescription>
         {t(`projects:${projectName}.description`)}
       </StyledDescription>

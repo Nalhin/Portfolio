@@ -8,4 +8,8 @@ export const NextI18NextInstance = new NextI18Next({
   otherLanguages: [languages.polish],
 });
 
-export const { appWithTranslation, withTranslation } = NextI18NextInstance;
+export const {
+  appWithTranslation,
+  withTranslation,
+  i18n,
+} = NextI18NextInstance;

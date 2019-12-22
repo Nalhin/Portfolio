@@ -6,6 +6,7 @@ import Project from '../components/project/Project';
 import { RepositoryProject } from '../interfaces/RepositoryProject';
 import { displayedProjects } from '../constants/displayedProjects';
 import styled from '@emotion/styled';
+import ProjectPlaceholders from '../components/project/ProjectPlaceholder';
 
 const StyledContainer = styled.div`
   display: flex;
@@ -25,15 +26,22 @@ type InputProps = {
 const id = Array.from(displayedProjects.keys());
 
 const Projects = () => {
-  const { data } = useQuery<Response, InputProps>(getRepositoriesById, {
-    variables: { id },
-  });
+  const { loading, data } = useQuery<Response, InputProps>(
+    getRepositoriesById,
+    {
+      variables: { id },
+    },
+  );
 
   return (
     <StyledContainer>
-      {data?.nodes.map(project => (
-        <Project project={project} key={project.name} />
-      ))}
+      {loading ? (
+        <ProjectPlaceholders />
+      ) : (
+        data.nodes.map(project => (
+          <Project project={project} key={project.name} />
+        ))
+      )}
     </StyledContainer>
   );
 };

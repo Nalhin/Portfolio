@@ -1,8 +1,7 @@
 {
   "projectPageTitle": "Moje projekty",
-  "preview": "Zobacz na żywo",
+  "preview": "Strona",
   "viewCode": "Zobacz kod",
-
   "flappyBird": {
     "description": "Gra flappy bird z oryginalnymi modelami."
   },

@@ -4,6 +4,7 @@ import styled from '@emotion/styled';
 import CommitCard from './CommitCard';
 import { useTranslation } from 'react-i18next';
 import { useTheme } from '@emotion/core';
+import CommitCardPlaceholder from './CommitCardPlaceholder';
 
 const StyledContainer = styled.div`
   display: flex;
@@ -18,18 +19,33 @@ const StyledTitle = styled.h2`
 
 interface Props {
   commits: Commit[];
+  loading: boolean;
 }
 
-const CommitHistory: React.FC<Props> = ({ commits }) => {
+const CommitHistory: React.FC<Props> = ({ commits, loading }) => {
   const { t } = useTranslation();
   const theme = useTheme();
+
   return (
     <StyledContainer>
       <StyledTitle theme={theme}>{t('home:latestCommits')}</StyledTitle>
+      {loading && <LoadingPlaceholder />}
       {commits.map(commit => (
         <CommitCard commit={commit} key={commit.committedDate} />
       ))}
     </StyledContainer>
+  );
+};
+
+const LoadingPlaceholder = () => {
+  return (
+    <>
+      <CommitCardPlaceholder />
+      <CommitCardPlaceholder />
+      <CommitCardPlaceholder />
+      <CommitCardPlaceholder />
+      <CommitCardPlaceholder />
+    </>
   );
 };
 

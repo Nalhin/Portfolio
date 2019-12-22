@@ -19,10 +19,19 @@ const StyledContainer = styled(motion.ul)<StyledProps>`
   left: 0;
   display: flex;
   align-items: center;
-  justify-content: center;
   flex-direction: column;
+
   pointer-events: ${props => (props.isMobileOpen ? 'all' : 'none')};
   font-size: ${props => props.theme.fontSizes.navigation}px;
+`;
+
+const StyledWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  flex: 1;
+  margin-top: ${props => props.theme.space.large}px;
 `;
 
 const variants = {
@@ -47,6 +56,7 @@ const StyledLanguageSwitcher = styled(LanguageSwitcher, {
   }
   margin-right: 0;
   text-align: center;
+  margin-bottom: ${props => props.theme.space.large}px;
 `;
 
 const MobileMenu: React.FC<Props> = ({ toggleMenu, isMobileOpen }) => {
@@ -55,11 +65,17 @@ const MobileMenu: React.FC<Props> = ({ toggleMenu, isMobileOpen }) => {
 
   return (
     <StyledContainer variants={variants} isMobileOpen={isMobileOpen}>
-      {navAdresses.map(address => (
-        <MobileLink href={address.href} key={address.href} onClick={toggleMenu}>
-          {t(address.translation)}
-        </MobileLink>
-      ))}
+      <StyledWrapper theme={theme}>
+        {navAdresses.map(address => (
+          <MobileLink
+            href={address.href}
+            key={address.href}
+            onClick={toggleMenu}
+          >
+            {t(address.translation)}
+          </MobileLink>
+        ))}
+      </StyledWrapper>
       <motion.div variants={linkVariants}>
         <StyledLanguageSwitcher onClick={toggleMenu} theme={theme} />
       </motion.div>
