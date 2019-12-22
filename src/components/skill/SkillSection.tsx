@@ -1,9 +1,9 @@
-import React from "react";
-import TechnologyIcon from "../icon/TechnologyIcon";
-import { techStackIcons } from "../../constants/techStackIcons";
-import { useTheme } from "@emotion/core";
-import styled from "@emotion/styled";
-import { useTranslation } from "react-i18next";
+import React from 'react';
+import TechnologyIcon from '../icon/TechnologyIcon';
+import { techStackIcons } from '../../constants/techStackIcons';
+import { useTheme } from '@emotion/core';
+import styled from '@emotion/styled';
+import { useTranslation } from 'react-i18next';
 
 const StyledSkillSection = styled.div`
   display: flex;

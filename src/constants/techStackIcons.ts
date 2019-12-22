@@ -1,4 +1,4 @@
-import { TechStackIcon } from "../interfaces/TechStackIcon";
+import { TechStackIcon } from '../interfaces/TechStackIcon';
 
 type iconsOptions = {
   [key: string]: TechStackIcon;

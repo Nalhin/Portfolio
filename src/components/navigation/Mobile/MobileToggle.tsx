@@ -1,7 +1,7 @@
-import React from "react";
-import { motion, Transition, Variants } from "framer-motion";
-import styled from "@emotion/styled";
-import { useTheme } from "@emotion/core";
+import React from 'react';
+import { motion, Transition, Variants } from 'framer-motion';
+import styled from '@emotion/styled';
+import { useTheme } from '@emotion/core';
 
 interface PathProps {
   d?: string;

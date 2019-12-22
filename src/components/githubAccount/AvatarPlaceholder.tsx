@@ -1,5 +1,5 @@
-import React from "react";
-import { useTheme } from "@emotion/core";
+import React from 'react';
+import { useTheme } from '@emotion/core';
 
 const AvatarPlaceholder = () => {
   const theme = useTheme();

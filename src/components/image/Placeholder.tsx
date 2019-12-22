@@ -1,6 +1,6 @@
-import React from "react";
-import { useTheme } from "@emotion/core";
-import styled from "@emotion/styled";
+import React from 'react';
+import { useTheme } from '@emotion/core';
+import styled from '@emotion/styled';
 
 const StyledSvg = styled.svg`
   overflow: hidden;

@@ -1,17 +1,17 @@
-import React from "react";
-import { withDefaultNamespaces } from "../lib/i18n/withDefaultNamespaces";
-import { useTranslation } from "react-i18next";
-import { useQuery } from "@apollo/react-hooks";
-import { getUser } from "../lib/graphql/queries/getUser";
-import { githubUserLogin } from "../constants/githubUserLogin";
-import GithubAccount from "../components/githubAccount/GithubAccount";
-import styled from "@emotion/styled";
-import { mySkills } from "../constants/mySkills";
-import SkillSection from "../components/skill/SkillSection";
-import { useTheme } from "@emotion/core";
-import { StyledCard } from "../components/card/StyledCart";
-import { StyledHeader } from "../components/header/header";
-import GithubAccountPlaceholder from "../components/githubAccount/GithubAccountPlaceholder";
+import React from 'react';
+import { withDefaultNamespaces } from '../lib/i18n/withDefaultNamespaces';
+import { useTranslation } from 'react-i18next';
+import { useQuery } from '@apollo/react-hooks';
+import { getUser } from '../lib/graphql/queries/getUser';
+import { githubUserLogin } from '../constants/githubUserLogin';
+import GithubAccount from '../components/githubAccount/GithubAccount';
+import styled from '@emotion/styled';
+import { mySkills } from '../constants/mySkills';
+import SkillSection from '../components/skill/SkillSection';
+import { useTheme } from '@emotion/core';
+import { StyledCard } from '../components/card/StyledCart';
+import { StyledHeader } from '../components/header/header';
+import GithubAccountPlaceholder from '../components/githubAccount/GithubAccountPlaceholder';
 
 const StyledContainer = styled.div`
   display: flex;
