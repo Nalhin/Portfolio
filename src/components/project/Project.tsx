@@ -10,7 +10,7 @@ import ProjectLink from './ProjectLink';
 import { StyledCard } from '../card/StyledCart';
 import { techStackIcons } from '../../constants/techStackIcons';
 import TechnologyIcon from '../icon/TechnologyIcon';
-import Image from '../image/Image';
+import Image from '../image/Img';
 
 const StyledProject = StyledCard.withComponent(motion.div);
 

@@ -1,11 +1,16 @@
-import { renderWithProviders } from '../utils/renderWithTranslation';
+import { renderWithProviders } from '../utils/renderWithProviders';
 import React from 'react';
 import Error from '../../src/pages/_error';
+import { cleanup } from '@testing-library/react';
+
+afterEach(cleanup);
 
 describe('Home', () => {
   it('Should display user data', () => {
     const { getByText } = renderWithProviders(<Error />);
 
-    expect(getByText('errorMessage')).toBeTruthy();
+    const errorMessage = getByText('errorMessage');
+
+    expect(errorMessage).toBeTruthy();
   });
 });

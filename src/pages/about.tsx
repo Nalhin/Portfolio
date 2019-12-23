@@ -77,8 +77,6 @@ const About = () => {
         )}
       </StyledContainer>
       <StyledSkillContainer>
-        <StyledHeader>{t('about:skills.title')}</StyledHeader>
-        <StyledText>{t('about:skills.noSkillRating')}</StyledText>
         <StyledSkillHeader theme={theme}>
           {t('about:skills.technologiesIKnow')}
         </StyledSkillHeader>

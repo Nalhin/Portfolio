@@ -28,7 +28,7 @@ const StyledEmptyLink = styled(StyledLink)`
 `;
 
 interface Props {
-  href: string;
+  href?: string;
 }
 
 const ProjectLink: React.FC<Props> = ({ href, children }) => {

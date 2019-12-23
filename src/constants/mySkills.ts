@@ -23,7 +23,7 @@ export const mySkills = {
     },
     {
       title: 'about:skills.testing',
-      skills: ['jest', 'cypress'],
+      skills: ['jest', 'react-testing-library', 'cypress'],
     },
   ],
   backEnd: [

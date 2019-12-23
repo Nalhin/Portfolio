@@ -29,10 +29,13 @@ const CommitHistory: React.FC<Props> = ({ commits, loading }) => {
   return (
     <StyledContainer>
       <StyledTitle theme={theme}>{t('home:latestCommits')}</StyledTitle>
-      {loading && <LoadingPlaceholder />}
-      {commits.map(commit => (
-        <CommitCard commit={commit} key={commit.committedDate} />
-      ))}
+      {loading ? (
+        <LoadingPlaceholder />
+      ) : (
+        commits.map(commit => (
+          <CommitCard commit={commit} key={commit.committedDate} />
+        ))
+      )}
     </StyledContainer>
   );
 };

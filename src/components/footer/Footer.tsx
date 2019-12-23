@@ -20,7 +20,6 @@ const StyledFooted = styled.footer`
   padding: ${props => props.theme.space.large}px 0
     ${props => props.theme.space.medium}px;
   box-shadow: ${props => props.theme.boxShadow.navigation};
-
   font-size: ${props => props.theme.fontSizes.footer}px;
   &:before {
     border-top: 2px ${props => props.theme.colors.primary} solid;
@@ -46,10 +45,11 @@ const currentYear = new Date().getFullYear();
 const Footer = () => {
   const theme = useTheme();
   const { t } = useTranslation();
+
   const handleClick = () => {};
 
   return (
-    <StyledFooted theme={theme}>
+    <StyledFooted theme={theme} data-testid="footer">
       <Button onClick={handleClick}>{t('common:downloadCv')}</Button>
       <StyledIconContainer>
         <IconWithLink url={githubAddress} icon={linkIcons.github} />

@@ -57,9 +57,9 @@ const ContributionShowcase = () => {
         </thead>
         <tbody>
           <tr>
-            <td>{data?.user.day.totalCommitContributions}</td>
-            <td>{data?.user.month.totalCommitContributions}</td>
-            <td>{data?.user.year.totalCommitContributions}</td>
+            <td>{data.user.day.totalCommitContributions}</td>
+            <td>{data.user.month.totalCommitContributions}</td>
+            <td>{data.user.year.totalCommitContributions}</td>
           </tr>
         </tbody>
       </StyledTable>

@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { StyledCard } from '../card/StyledCart';
 import styled from '@emotion/styled';
 import { StyledHeader } from '../header/header';
-import Image from '../image/Image';
+import Image from '../image/Img';
 import AvatarPlaceholder from './AvatarPlaceholder';
 
 const StyledAvatar = styled(Image)`

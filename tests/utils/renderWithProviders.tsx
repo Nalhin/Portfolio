@@ -1,6 +1,5 @@
 import React from 'react';
 import { I18nextProvider } from 'react-i18next';
-
 import { render } from '@testing-library/react';
 import trans from '../mocks/i18n';
 import { theme } from '../../src/styles/theme';

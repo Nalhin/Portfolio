@@ -54,6 +54,10 @@ export const techStackIcons: iconsOptions = {
   react: { src: 'react', name: 'React' },
   reactivex: { src: 'reactivex', name: 'Rxjs' },
   'react-router': { src: 'react-router', name: 'React Router' },
+  'react-testing-library': {
+    src: 'react-testing-library',
+    name: 'React Testing Library',
+  },
   redux: { src: 'redux', name: 'Redux' },
   'redux-saga': { src: 'redux-saga', name: 'Redux Saga' },
   rest: { src: 'rest', name: 'REST' },

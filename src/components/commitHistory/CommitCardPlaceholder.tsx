@@ -6,7 +6,7 @@ const CommitCardPlaceholder = () => {
   const theme = useTheme();
   return (
     <StyledCommitCard>
-      <svg width="300" height="110">
+      <svg width="300" height="110" data-testid="commit__placeholder">
         <rect
           width="130"
           height="20"

@@ -57,7 +57,7 @@ const NavBar = () => {
   };
 
   return (
-    <StyledNavigation>
+    <StyledNavigation data-testid="navigation">
       <Logo />
       <StyledCenter theme={theme}>
         {navAdresses.map(address => (

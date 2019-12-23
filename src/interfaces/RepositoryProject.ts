@@ -8,7 +8,11 @@ export interface RepositoryProject {
     name: string;
   };
   repositoryTopics: {
-    nodes: [{ topic: { name: string } }];
+    nodes: Topic[];
   };
   id: string;
+}
+
+interface Topic {
+  topic: { name: string };
 }

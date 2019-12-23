@@ -1,9 +1,8 @@
 export const mockGithubUser = {
   login: 'login',
-  avatar_url: 'avatar',
-  name: 'name',
+  avatarUrl: 'avatar',
+  url: 'url',
+  bio: 'bio',
+  company: 'company',
   email: 'email',
-  location: 'location',
-  public_repos: '15',
-  html_url: 'url',
 };
