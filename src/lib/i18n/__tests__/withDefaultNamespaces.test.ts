@@ -1,4 +1,4 @@
-import { withDefaultNamespaces } from "../withDefaultNamespaces";
+import { withDefaultNamespaces } from '../withDefaultNamespaces';
 
 describe('withDefaultNamespaces', () => {
   it('Should append namespaces correctly', () => {

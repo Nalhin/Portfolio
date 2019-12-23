@@ -65,7 +65,7 @@ const About = () => {
     <div>
       <StyledContainer theme={theme}>
         <StyledCardSection>
-          <StyledHeader>About me</StyledHeader>
+          <StyledHeader>{t('about:aboutMe')}</StyledHeader>
           <span>{t('about:me')}</span>
           <span>{t('about:currently')}</span>
           <span>{t('about:history')}</span>

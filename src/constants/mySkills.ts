@@ -19,7 +19,7 @@ export const mySkills = {
     },
     {
       title: 'about:skills.runtime',
-      skills: ['npm', 'webpack', 'babel', 'docker'],
+      skills: ['npm', 'webpack', 'prettier', 'babel', 'docker'],
     },
     {
       title: 'about:skills.testing',

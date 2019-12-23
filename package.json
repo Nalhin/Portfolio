@@ -1,5 +1,6 @@
 {
   "scripts": {
+    "format": "prettier --write \"**/*.+(js|jsx|ts|tsx|json|css|scss|md)\"",
     "analyze": "cross-env ANALYZE=true npm run build",
     "dev": "nodemon",
     "build": "next build && tsc --project tsconfig.server.json",

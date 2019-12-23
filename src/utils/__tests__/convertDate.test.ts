@@ -1,4 +1,4 @@
-import { convertDate } from "../convertDate";
+import { convertDate } from '../convertDate';
 
 describe('convertDate', () => {
   it('Should be truthy if field is empty', () => {

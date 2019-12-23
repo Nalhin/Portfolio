@@ -1,14 +1,8 @@
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
-    "isolatedModules": false,
+    "isolatedModules": false
   },
-  "exclude": [
-    "node_modules",
-    "src/server/**/*.ts"
-  ],
-  "include": [
-    "src/**/__tests__/.*(ts|tsx)$",
-    "test**"
-  ]
+  "exclude": ["node_modules", "src/server/**/*.ts"],
+  "include": ["src/**/__tests__/.*(ts|tsx)$", "test**"]
 }

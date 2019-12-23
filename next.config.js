@@ -9,7 +9,7 @@ module.exports = withPlugins(
     withBundleAnalyzer({
       enabled: process.env.ANALYZE === 'true',
     }),
-    withImages
+    withImages,
   ],
   {
     webpack(config, options) {

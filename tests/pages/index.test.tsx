@@ -1,13 +1,13 @@
-import { renderWithProviders } from "../utils/renderWithProviders";
-import { MockedProvider } from "@apollo/react-testing";
-import React from "react";
-import Home from "../../src/pages";
-import { githubUserLogin } from "../../src/constants/githubUserLogin";
-import { getLatestActivity } from "../../src/lib/graphql/queries/getLastestActivity";
-import { getCommitActivity } from "../../src/lib/graphql/queries/getCommitActivity";
-import { getDates } from "../../src/lib/apollo/withApolloClient";
-import { InMemoryCache } from "apollo-cache-inmemory";
-import { cleanup } from "@testing-library/react";
+import { renderWithProviders } from '../utils/renderWithProviders';
+import { MockedProvider } from '@apollo/react-testing';
+import React from 'react';
+import Home from '../../src/pages';
+import { githubUserLogin } from '../../src/constants/githubUserLogin';
+import { getLatestActivity } from '../../src/lib/graphql/queries/getLastestActivity';
+import { getCommitActivity } from '../../src/lib/graphql/queries/getCommitActivity';
+import { getDates } from '../../src/lib/apollo/withApolloClient';
+import { InMemoryCache } from 'apollo-cache-inmemory';
+import { cleanup } from '@testing-library/react';
 
 const dates = getDates();
 

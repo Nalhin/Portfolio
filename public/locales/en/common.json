@@ -10,7 +10,7 @@
   },
   "routes": {
     "/": "Home",
-    "/about": "O mnie",
+    "/about": "About",
     "/projects": "Projects",
     "/contact": "Contact"
   },

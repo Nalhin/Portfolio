@@ -14,9 +14,9 @@ const ProjectPlaceholder = () => {
       ref={ref}
       theme={theme}
     >
-      <svg width="400" height="600" data-testid="project__placeholder">
+      <svg width="100%" height="500" data-testid="project__placeholder">
         <rect
-          width="400"
+          width="100%"
           height="30"
           x="0"
           y="10"
@@ -24,7 +24,7 @@ const ProjectPlaceholder = () => {
           mask="url(#shining)"
         />
         <rect
-          width="400"
+          width="100%"
           height="30"
           x="0"
           y="50"
@@ -32,7 +32,7 @@ const ProjectPlaceholder = () => {
           mask="url(#shining)"
         />
         <rect
-          width="400"
+          width="100%"
           height="400"
           x="0"
           y="90"
@@ -40,7 +40,7 @@ const ProjectPlaceholder = () => {
           mask="url(#shining)"
         />
         <rect
-          width="400"
+          width="100%"
           height="80"
           x="0"
           y="510"
