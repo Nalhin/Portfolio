@@ -19,7 +19,7 @@ interface AppProps {
   apolloClient: AppApolloClient;
 }
 
-const getDates = () => {
+export const getDates = () => {
   const now = new Date();
   const dayAgo = new Date();
   dayAgo.setDate(now.getDate() - 1);
@@ -33,6 +33,7 @@ const getDates = () => {
     __typename: 'dates',
   };
 };
+
 const dates = getDates();
 
 export const withApolloClient = (App: NextComponentType<{}, {}, AppProps>) => {

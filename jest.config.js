@@ -4,6 +4,9 @@ module.exports = {
   },
   collectCoverageFrom: [
     "src/**/*.{ts,tsx}",
+    "!src/lib/**",
+    "!src/server/**",
+    "!src/interfaces/**"
   ],
   automock: false,
   snapshotSerializers: ['jest-emotion'],

@@ -1,12 +1,12 @@
-import React from 'react';
-import { withDefaultNamespaces } from '../lib/i18n/withDefaultNamespaces';
-import { useQuery } from '@apollo/react-hooks';
-import { getRepositoriesById } from '../lib/graphql/queries/getRepositories';
-import Project from '../components/project/Project';
-import { RepositoryProject } from '../interfaces/RepositoryProject';
-import { displayedProjects } from '../constants/displayedProjects';
-import styled from '@emotion/styled';
-import ProjectPlaceholders from '../components/project/ProjectPlaceholder';
+import React from "react";
+import { withDefaultNamespaces } from "../lib/i18n/withDefaultNamespaces";
+import { useQuery } from "@apollo/react-hooks";
+import { getRepositoriesById } from "../lib/graphql/queries/getRepositories";
+import Project from "../components/project/Project";
+import { RepositoryProject } from "../interfaces/RepositoryProject";
+import { projectIds } from "../constants/displayedProjects";
+import styled from "@emotion/styled";
+import ProjectPlaceholders from "../components/project/ProjectPlaceholder";
 
 const StyledContainer = styled.div`
   display: flex;
@@ -23,13 +23,11 @@ type InputProps = {
   id: string[];
 };
 
-const id = Array.from(displayedProjects.keys());
-
 const Projects = () => {
   const { loading, data } = useQuery<Response, InputProps>(
     getRepositoriesById,
     {
-      variables: { id },
+      variables: { id: projectIds },
     },
   );
 

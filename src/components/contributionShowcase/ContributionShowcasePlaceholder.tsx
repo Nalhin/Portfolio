@@ -4,7 +4,11 @@ import { useTheme } from '@emotion/core';
 const ContributionShowcasePlaceholder = () => {
   const theme = useTheme();
   return (
-    <svg width="300" height="75">
+    <svg
+      width="300"
+      height="75"
+      data-testid="contribution-showcase__placeholder"
+    >
       <rect
         width="230"
         height="20"

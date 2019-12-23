@@ -10,3 +10,28 @@ export const mockProject = {
   repositoryTopics: { nodes: [{ topic: { name: 'javascript' } }] },
   url: 'url',
 };
+
+export const projectWithTypenames = {
+  nodes: [
+    {
+      ...mockProject,
+      __typename: 'Repository',
+      primaryLanguage: {
+        ...mockProject.primaryLanguage,
+        __typename: 'Language',
+      },
+      repositoryTopics: {
+        nodes: [
+          {
+            topic: {
+              ...mockProject.repositoryTopics.nodes[0].topic,
+              __typename: 'Topic',
+            },
+            __typename: 'RepositoryTopic',
+          },
+        ],
+        __typename: 'RepositoryTopicConnection',
+      },
+    },
+  ],
+};

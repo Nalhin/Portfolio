@@ -1,7 +1,7 @@
 import gql from 'graphql-tag';
 
 export const getDateFromCache = gql`
-  query getData {
+  query getDate {
     dates {
       dateNow
       dateDayAgo

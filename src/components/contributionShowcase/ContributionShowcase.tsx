@@ -32,8 +32,10 @@ const ContributionShowcase = () => {
     query: getDateFromCache,
   });
 
+  const { dateNow, dateDayAgo, dateMonthAgo } = datesData.dates;
+
   const { loading, data } = useQuery(getCommitActivity, {
-    variables: { githubUserLogin, ...datesData.dates },
+    variables: { githubUserLogin, dateNow, dateDayAgo, dateMonthAgo },
   });
 
   if (loading) {

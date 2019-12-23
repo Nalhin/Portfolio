@@ -9,3 +9,5 @@ export const displayedProjects = new Map([
   ['MDEwOlJlcG9zaXRvcnkxOTQ1Njg1NTc=', '2048'],
   ['MDEwOlJlcG9zaXRvcnkxODk2NDU3MTc=', 'flappyBird'],
 ]);
+
+export const projectIds = Array.from(displayedProjects.keys());

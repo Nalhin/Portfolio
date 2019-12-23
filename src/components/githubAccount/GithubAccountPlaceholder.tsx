@@ -6,7 +6,7 @@ const GithubAccountPlaceholder = () => {
   const theme = useTheme();
   return (
     <StyledContainer>
-      <svg width="300" height="280">
+      <svg width="300" height="280" data-testid="github-account__placeholder">
         <rect
           width="240"
           height="70"
@@ -15,7 +15,6 @@ const GithubAccountPlaceholder = () => {
           fill={theme.colors.placeholder}
           mask="url(#shining)"
         />
-
         <circle
           cx="150"
           cy="160"

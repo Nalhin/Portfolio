@@ -4,7 +4,7 @@ import { InMemoryCache, NormalizedCacheObject } from 'apollo-cache-inmemory';
 import { isBrowser } from '../../utils/isBrowser';
 import fetch from 'isomorphic-unfetch';
 import { setContext } from 'apollo-link-context';
-import { githubBaseUrl } from '../../api/github/baseUrl';
+import { githubBaseUrl } from './baseUrl';
 
 export type AppApolloClient = ApolloClient<NormalizedCacheObject>;
 

@@ -6,3 +6,8 @@ export const mockGithubUser = {
   company: 'company',
   email: 'email',
 };
+
+export const mockGithubUserWithTypename = {
+  ...mockGithubUser,
+  __typename: 'User',
+};

@@ -14,7 +14,7 @@ const ProjectPlaceholder = () => {
       ref={ref}
       theme={theme}
     >
-      <svg width="400" height="600">
+      <svg width="400" height="600" data-testid="project__placeholder">
         <rect
           width="400"
           height="30"
