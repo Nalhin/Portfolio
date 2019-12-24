@@ -21,6 +21,8 @@ export const extractCommits = (data: any): Commit[] => {
       }),
     );
   });
-  commits.sort((commit: any) => commit.committedDate);
+  commits.sort(
+    (a: any, b: any) => -a.committedDate.localeCompare(b.committedDate),
+  );
   return commits.slice(0, 15);
 };

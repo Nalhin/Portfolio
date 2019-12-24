@@ -17,6 +17,7 @@ const Layout: React.FC = ({ children }) => {
         <title>Portfolio</title>
         <meta charSet="utf-8" />
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="Description" content="Portfolio" />
         <link
           rel="shortcut icon"
           type="image/x-icon"

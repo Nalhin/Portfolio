@@ -41,6 +41,16 @@ Tests with Jest and React Testing Library, custom Theme and I18Next providers in
 * Travis
 * Codecov
 
+## Folder structure
+
+* components (Reusable components)
+* constants (Constant variables)
+* interfaces (Typescript interfaces)
+* lib (External libraries like i18n)
+* pages (Next.js Routes)
+* server (Custom express server)
+* styles (Theme and style variables)
+* utils (Utility functions)
 
 ## Requirements
 
