@@ -11,8 +11,8 @@ Next.js includes a custom config - express server with nextI18NextMiddleware (ne
 and contact endpoint, which uses sendmail in order to proxy messages to my own email.
 Does not use any component library, every component has been written manually.
 Emotion theming has been used for better consistency between components.
-Implementation of theme interface was based on [System-UI Theme Specification](https://system-ui.com/theme).
-Tests with Jest and React Testing Library, custom Theme and I18Next providers in order for components to render properly during testing.
+The theme interface implementation was based on [System-UI Theme Specification](https://system-ui.com/theme).
+Tests with Jest and React Testing Library.
 
 ## Showcase
 
@@ -43,14 +43,17 @@ Tests with Jest and React Testing Library, custom Theme and I18Next providers in
 
 ## Folder structure
 
-* components (Reusable components)
-* constants (Constant variables)
-* interfaces (Typescript interfaces)
-* lib (External libraries like i18n)
-* pages (Next.js Routes)
-* server (Custom express server)
-* styles (Theme and style variables)
-* utils (Utility functions)
+```
+src
+├── components (reusable components)
+├── constants (constant values)
+├── interfaces (typescript interfaces)
+├── lib (external libraries like i18n)
+├── pages (Next.js Routes)
+├── server (Custom express server)
+├── styles (emotion theme and style variables)
+└── utils (utility functions)
+```
 
 ## Requirements
 
