@@ -9,8 +9,6 @@ import styled from '@emotion/styled';
 import { mySkills } from '../constants/mySkills';
 import SkillSection from '../components/skill/SkillSection';
 import { useTheme } from '@emotion/core';
-import { StyledCard } from '../components/card/StyledCart';
-import { StyledHeader } from '../components/header/header';
 import GithubAccountPlaceholder from '../components/githubAccount/GithubAccountPlaceholder';
 
 const StyledContainer = styled.div`
@@ -23,7 +21,7 @@ const StyledContainer = styled.div`
   }
 `;
 
-const StyledSkillContainer = styled(StyledCard)`
+const StyledSkillContainer = styled.div`
   margin-top: ${props => props.theme.space.large}px;
   display: flex;
   align-items: center;
@@ -38,11 +36,11 @@ const StyledSkillHeader = styled.h2`
   font-weight: ${props => props.theme.fontWeights.heading};
 `;
 
-const StyledCardSection = styled(StyledCard)`
+const StyledCardSection = styled.div`
   display: flex;
   align-items: flex-start;
   margin: ${props => props.theme.space.large}px auto;
-  padding: ${props => props.theme.space.large}px;
+  flex-flow: wrap;
 `;
 
 const StyledText = styled.span`
@@ -52,6 +50,11 @@ const StyledText = styled.span`
 
 const StyledSectionWrapper = styled.section`
   width: 100%;
+`;
+
+const StyledWrapper = styled.div`
+  max-width: 400px;
+  margin: 0 auto;
 `;
 
 const About = () => {
@@ -65,16 +68,17 @@ const About = () => {
     <div>
       <StyledContainer theme={theme}>
         <StyledCardSection>
-          <StyledHeader>{t('about:aboutMe')}</StyledHeader>
-          <span>{t('about:me')}</span>
-          <span>{t('about:currently')}</span>
-          <span>{t('about:history')}</span>
+          <StyledWrapper>
+            <span>{t('about:me')}</span>
+            <span>{t('about:currently')}</span>
+            <span>{t('about:history')}</span>
+          </StyledWrapper>
+          {loading ? (
+            <GithubAccountPlaceholder />
+          ) : (
+            <GithubAccount githubUser={data.user} />
+          )}
         </StyledCardSection>
-        {loading ? (
-          <GithubAccountPlaceholder />
-        ) : (
-          <GithubAccount githubUser={data.user} />
-        )}
       </StyledContainer>
       <StyledSkillContainer>
         <StyledSkillHeader theme={theme}>

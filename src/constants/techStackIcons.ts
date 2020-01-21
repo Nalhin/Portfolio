@@ -4,20 +4,6 @@ type iconsOptions = {
   [key: string]: TechStackIcon;
 };
 
-export const linkIcons = {
-  youtube: { src: 'youtube', name: 'Youtube', directory: 'link' },
-  github: { src: 'github', name: 'Github', directory: 'link' },
-  twitter: { src: 'twitter', name: 'Twitter', directory: 'link' },
-  website: { src: 'web', name: 'Website', directory: 'link' },
-  websiteUnavailable: {
-    src: 'website-unavailable',
-    name: 'Website unavailable',
-    directory: 'link',
-  },
-  logo: { src: 'logo', name: 'Logo', directory: 'link' },
-  hamburger: { src: 'hamburger', name: 'Hamburger', directory: '' },
-};
-
 export const techStackIcons: iconsOptions = {
   angular: { src: 'angular', name: 'Angular' },
   apollo: { src: 'apollo', name: 'Apollo Client' },

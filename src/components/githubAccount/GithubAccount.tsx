@@ -13,10 +13,8 @@ const StyledAvatar = styled(Image)`
 `;
 
 export const StyledContainer = styled(StyledCard)`
-  width: 300px;
+  width: 240px;
   padding: ${props => props.theme.space.large}px;
-  margin: ${props => props.theme.space.large}px 0
-    ${props => props.theme.space.large}px ${props => props.theme.space.large}px;
   ${props => props.theme.mediaQueries.medium} {
     margin: auto;
   }
@@ -30,7 +28,7 @@ const GithubAccount: React.FC<Props> = ({ githubUser }) => {
   const { t } = useTranslation();
   return (
     <StyledContainer>
-      <StyledHeader>{t('about:githubAccount')}</StyledHeader>
+      <StyledHeader>Github</StyledHeader>
       <div>{githubUser.login}</div>
       <div>{githubUser.bio}</div>
       <a href={githubUser.url} target="_blank" rel="noopener">

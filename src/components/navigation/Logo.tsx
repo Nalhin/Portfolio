@@ -1,6 +1,5 @@
 import React from 'react';
 import Link from 'next/link';
-import { linkIcons } from '../../constants/techStackIcons';
 import Icon from '../icon/Icon';
 import styled from '@emotion/styled';
 import { useTheme } from '@emotion/core';
@@ -23,7 +22,7 @@ const Logo = () => {
     <StyledContainer theme={theme}>
       <Link href={'/'}>
         <a>
-          <StyledLogo {...linkIcons.logo} theme={theme} />
+          <StyledLogo src="logo" theme={theme} />
         </a>
       </Link>
     </StyledContainer>

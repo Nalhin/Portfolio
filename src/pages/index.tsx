@@ -38,8 +38,6 @@ const Home: NextPage = () => {
     <div>
       <TypedTitle />
       <StyledSubtext theme={theme}>
-        {t('home:iam')}
-        <br />
         <StyledPrimaryColorText theme={theme}>
           Krzysztof Olipra
         </StyledPrimaryColorText>

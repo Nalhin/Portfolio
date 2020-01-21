@@ -1,16 +1,12 @@
 import React from 'react';
-import {
-  githubAddress,
-  twitterAddress,
-  youtubeAddress,
-} from '../../constants/externalWebsiteLinks';
-import { linkIcons } from '../../constants/techStackIcons';
-import IconWithLink from '../icon/IconWithLink';
+import FooterIcon from '../icon/FooterIcon';
 import Button from '../button/Button';
 import { useTranslation } from 'react-i18next';
 import styled from '@emotion/styled';
 import { useTheme } from '@emotion/core';
 import { isBrowser } from '../../utils/isBrowser';
+import { footerIcons } from '../../constants/footerIcons';
+import { externalAddresses } from '../../constants/externalWebsiteLinks';
 
 const StyledFooted = styled.footer`
   background: ${props => props.theme.colors.foreground};
@@ -58,9 +54,19 @@ const Footer = () => {
     <StyledFooted theme={theme} data-testid="footer">
       <Button onClick={handleClick}>{t('common:downloadCv')}</Button>
       <StyledIconContainer>
-        <IconWithLink url={githubAddress} icon={linkIcons.github} />
-        <IconWithLink url={youtubeAddress} icon={linkIcons.youtube} />
-        <IconWithLink url={twitterAddress} icon={linkIcons.twitter} />
+        <FooterIcon url={externalAddresses.github} icon={footerIcons.github} />
+        <FooterIcon
+          url={externalAddresses.youtube}
+          icon={footerIcons.youtube}
+        />
+        <FooterIcon
+          url={externalAddresses.twitter}
+          icon={footerIcons.twitter}
+        />
+        <FooterIcon
+          url={externalAddresses.linkedinAddress}
+          icon={footerIcons.linkedin}
+        />
       </StyledIconContainer>
       <StyledCopyright>
         Copyright© 2019 - {currentYear} Krzysztof Olipra All Rights Reserved.
