@@ -16,15 +16,15 @@ Tests with Jest and React Testing Library.
 
 ## Showcase
 
-![home](showcase/home.png)
+![home](screenshots/home.png)
 
-![home-mobile](showcase/home-mobile.png)
+![home-mobile](screenshots/home-mobile.png)
 
-![about-mobile](showcase/about-mobile.png)
+![about-mobile](screenshots/about-mobile.png)
 
-![projects-mobile](showcase/projects-mobile.png)
+![projects-mobile](screenshots/projects-mobile.png)
 
-![contact-mobile](showcase/contact-mobile.png)
+![contact-mobile](screenshots/contact-mobile.png)
 
 ## Technology Stack
 

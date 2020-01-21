@@ -10,6 +10,7 @@ import Button from '../button/Button';
 import { useTranslation } from 'react-i18next';
 import styled from '@emotion/styled';
 import { useTheme } from '@emotion/core';
+import { isBrowser } from '../../utils/isBrowser';
 
 const StyledFooted = styled.footer`
   background: ${props => props.theme.colors.foreground};
@@ -45,8 +46,13 @@ const currentYear = new Date().getFullYear();
 const Footer = () => {
   const theme = useTheme();
   const { t } = useTranslation();
+  const { i18n } = useTranslation();
 
-  const handleClick = () => {};
+  const handleClick = () => {
+    if (isBrowser) {
+      window.open(`${window.location.origin}/cv/${i18n.language}`, '_blank');
+    }
+  };
 
   return (
     <StyledFooted theme={theme} data-testid="footer">

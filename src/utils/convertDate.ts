@@ -1,7 +1,9 @@
-export const convertDate = (date: string): string => {
-  const dateObject = new Date(date);
-  const minutes = dateObject.getUTCMinutes();
-  return `${dateObject.toLocaleDateString()} ${dateObject.getUTCHours()}:${
-    minutes < 10 ? '0' + minutes : minutes
-  }`;
+import { format, register } from 'timeago.js';
+import { timeagoLocalePolish } from '../lib/i18n/timeagoLocale';
+import { languages } from '../constants/languages';
+
+register(languages.polish, timeagoLocalePolish);
+
+export const convertDate = (date: string, language = ''): string => {
+  return format(date, language);
 };

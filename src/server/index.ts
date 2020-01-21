@@ -6,8 +6,9 @@ import { NextI18NextInstance } from '../lib/i18n/i18n';
 import dotenv from 'dotenv';
 import { sendEmail } from './mailer';
 import bodyParser from 'body-parser';
-import { isEmpty } from '../utils/isEmpty';
 import { isAnyFormFieldEmpty } from '../utils/isFormFieldEmpty';
+import * as path from 'path';
+import { languages } from '../constants/languages';
 
 dotenv.config();
 const port = parseInt(process.env.PORT ?? '3000', 10);
@@ -35,6 +36,20 @@ const handle = app.getRequestHandler();
     } catch (e) {
       res.status(401).send({ error: e });
     }
+  });
+
+  server.get('/cv/:language', (req, res) => {
+    let language = req.params.language;
+
+    if (!Object.values(languages).includes(language)) {
+      language = languages.english;
+    }
+
+    const cvPath = path.join(
+      __dirname,
+      `../../cv/CV_${language.toUpperCase()}.pdf`,
+    );
+    res.sendFile(cvPath);
   });
 
   server.get('*', (req, res) => {

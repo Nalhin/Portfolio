@@ -38,6 +38,7 @@ const StyledLinkContainer = styled.div`
 
 const StyledDescription = styled.span`
   text-align: center;
+  padding-top: ${props => props.theme.space.medium}px;
 `;
 
 const Project: React.FC<Props> = ({ project }) => {
@@ -66,7 +67,7 @@ const Project: React.FC<Props> = ({ project }) => {
         src={`/images/projects/${projectName}.jpg`}
         alt={project.name}
       />
-      <StyledDescription>
+      <StyledDescription theme={theme}>
         {t(`projects:${projectName}.description`)}
       </StyledDescription>
       <StyledLinkContainer>

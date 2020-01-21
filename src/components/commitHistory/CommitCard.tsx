@@ -6,6 +6,7 @@ import TechnologyIcon from '../icon/TechnologyIcon';
 import styled from '@emotion/styled';
 import { useTheme } from '@emotion/core';
 import { convertDate } from '../../utils/convertDate';
+import { useTranslation } from 'react-i18next';
 
 const StyledLanguagesContainer = styled.div`
   display: flex;
@@ -21,6 +22,8 @@ export const StyledCommitCard = styled(StyledCard)`
 const StyledA = styled.a`
   text-decoration: none;
   color: ${props => props.theme.colors.textPrimary};
+  overflow-wrap: break-word;
+  width: 100%;
 `;
 
 const StyledDate = styled.span`
@@ -36,6 +39,8 @@ interface Props {
 
 const CommitCard: React.FC<Props> = React.memo(({ commit }) => {
   const theme = useTheme();
+  const { i18n } = useTranslation();
+
   return (
     <StyledCommitCard>
       <StyledA
@@ -57,7 +62,9 @@ const CommitCard: React.FC<Props> = React.memo(({ commit }) => {
       <StyledA href={commit.url} target="_blank" rel="noopener" theme={theme}>
         {commit.message}
       </StyledA>
-      <StyledDate theme={theme}>{convertDate(commit.committedDate)}</StyledDate>
+      <StyledDate theme={theme}>
+        {convertDate(commit.committedDate, i18n.language)}
+      </StyledDate>
     </StyledCommitCard>
   );
 });

@@ -39,6 +39,17 @@ export const getLatestActivity = gql`
                               committedDate
                               message
                               url
+                              id
+                              committer {
+                                user {
+                                  login
+                                }
+                              }
+                              author {
+                                user {
+                                  login
+                                }
+                              }
                             }
                           }
                         }

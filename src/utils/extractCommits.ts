@@ -1,7 +1,9 @@
 import { Commit } from '../interfaces/Commit';
+import { githubUserLogin } from '../constants/githubUserLogin';
 
 export const extractCommits = (data: any): Commit[] => {
   const commits: any = [];
+  const ids: any = {};
 
   data?.user.repositories.nodes.forEach((repo: any) => {
     repo.refs.edges.forEach((ref: any) =>
@@ -10,19 +12,28 @@ export const extractCommits = (data: any): Commit[] => {
         const languages = repo.languages.nodes.map((language: any) =>
           language.name.toLowerCase(),
         );
-        commits.push({
-          committedDate,
-          message,
-          languages: languages,
-          repositoryName: repo.name,
-          repositoryUrl: repo.url,
-          url,
-        });
+
+        const { author, committer, id } = commit.node;
+
+        if (
+          !ids[id] &&
+          ((author.user && author.user.login === githubUserLogin) ||
+            (committer.user && committer.user.login === githubUserLogin))
+        ) {
+          commits.push({
+            committedDate,
+            message,
+            languages: languages,
+            repositoryName: repo.name,
+            repositoryUrl: repo.url,
+            url,
+          });
+        }
       }),
     );
   });
   commits.sort(
     (a: any, b: any) => -a.committedDate.localeCompare(b.committedDate),
   );
-  return commits.slice(0, 15);
+  return commits.slice(0, 10);
 };
