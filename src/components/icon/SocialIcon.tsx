@@ -4,7 +4,7 @@ import { TechStackIcon } from '../../interfaces/TechStackIcon';
 import styled from '@emotion/styled';
 import { useTheme } from '@emotion/core';
 
-const StyledA = styled.a`
+export const StyledA = styled.a`
   background: #000;
   border-radius: 50%;
   width: 38px;
@@ -12,7 +12,8 @@ const StyledA = styled.a`
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: background-color 0.5s ease;
+  transition: background 0.5s ease;
+  cursor: pointer;
   &:hover {
     background: ${props => props.theme.colors.primary};
   }
@@ -23,14 +24,14 @@ interface Props {
   icon: TechStackIcon;
 }
 
-const FooterIcon: React.FC<Props> = ({ url, icon }) => {
+const SocialIcon: React.FC<Props> = ({ url, icon }) => {
   const theme = useTheme();
 
   return (
     <StyledA href={url} target="_blank" rel="noopener" theme={theme}>
-      <Icon {...icon} directory="footer" width={24} height={24} />
+      <Icon {...icon} directory="social" width={24} height={24} />
     </StyledA>
   );
 };
 
-export default FooterIcon;
+export default SocialIcon;

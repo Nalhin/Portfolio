@@ -12,21 +12,36 @@ import { getLatestActivity } from '../lib/graphql/queries/getLastestActivity';
 import { githubUserLogin } from '../constants/githubUserLogin';
 import { extractCommits } from '../utils/extractCommits';
 import CommitHistory from '../components/commitHistory/CommitHistory';
+import DownloadCv from '../components/downloadCv/DownloadCv';
+import Button from '../components/button/Button';
 
 const StyledPrimaryColorText = styled.span`
   color: ${props => props.theme.colors.secondary};
+  font-weight: ${props => props.theme.fontWeights.heading};
+`;
+
+const StyledName = styled.span`
+  font-weight: ${props => props.theme.fontWeights.heading};
+  font-size: ${props => props.theme.fontSizes.title * 1.5}px;
 `;
 
 const StyledSubtext = styled.div`
   padding-top: ${props => props.theme.space.giga}px;
   text-align: center;
-  font-size: ${props => props.theme.fontSizes.navigation}px;
   color: ${props => props.theme.colors.textSecondary};
+  font-size: ${props => props.theme.fontSizes.navigation}px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const StyledDownloadCv = styled(DownloadCv)`
+  margin-top: ${props => props.theme.space.medium}px;
 `;
 
 const Home: NextPage = () => {
-  const { t } = useTranslation();
   const theme = useTheme();
+  const { t } = useTranslation();
 
   const { loading, data } = useQuery(getLatestActivity, {
     variables: { githubUserLogin },
@@ -38,11 +53,15 @@ const Home: NextPage = () => {
     <div>
       <TypedTitle />
       <StyledSubtext theme={theme}>
+        <StyledName>Krzysztof Olipra</StyledName>
         <StyledPrimaryColorText theme={theme}>
-          Krzysztof Olipra
+          Full Stack Developer
         </StyledPrimaryColorText>
-        <br />
-        Full Stack Developer
+        <StyledDownloadCv
+          Component={(props: { onClick: () => void }) => (
+            <Button {...props}>{t('common:downloadCv')}</Button>
+          )}
+        />
       </StyledSubtext>
       <ContributionShowcase />
       <CommitHistory commits={commits} loading={loading} />

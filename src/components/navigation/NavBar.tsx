@@ -34,16 +34,12 @@ const StyledCenter = styled.div`
 const StyledMobileText = styled.span`
   display: none;
   ${props => props.theme.mediaQueries.small} {
-    display: block;
+    display: flex;
   }
-  padding-top: ${props => props.theme.space.large - 2}px;
+  margin: ${props => props.theme.space.large}px;
   font-size: ${props => props.theme.fontSizes.navigation}px;
   z-index: 1000;
   user-select: none;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
 `;
 
 const NavBar = () => {

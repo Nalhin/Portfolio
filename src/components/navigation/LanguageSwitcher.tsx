@@ -18,8 +18,11 @@ const StyledContainer = styled.div`
 
 const StyledSeparator = styled.span`
   text-align: center;
+  display: flex;
   margin: ${props => props.theme.space.large}px
-    ${props => props.theme.space.medium}px 0;
+    ${props => props.theme.space.medium}px;
+  padding-bottom: ${props => (props.theme.space.small * 3) / 2}px;
+  align-self: center;
 
   ${props => props.theme.mediaQueries.small} {
     display: none;

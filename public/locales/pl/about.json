@@ -1,14 +1,10 @@
 {
-  "me": "Nazywam sie Krzysztof Olipra. Jestem full-stack deweloperem, który specializuje się w tworzeniu kompleksowych aplikacji webnowych.",
-  "currently": "W tym momencie studiuje na drugim roku Informatyki i Ekonometrii (AGH).",
-  "history": "Moje przygoda z kodzeniem rozpoczeła się w technikum, ale ostatnimi czasy kodzenie sotalo moją pasją. Zawsze lubiłem możliwości samodoskonalenia, dlatego uważam, że świetnie nadaję sie do programowania. Zawsze mozna się czegoś nowego nauczyć, wszystko można zrobić lepiej, a każdy nowy dzień wiąże się z nowymi wyzwaniami.",
+  "me": "Nazywam sie Krzysztof Olipra. Jestem full-stack deweloperem, który specializuje się w tworzeniu kompleksowych aplikacji webnowych. ",
+  "currently": "W tym momencie studiuje na drugim roku Informatyki i Ekonometrii (AGH). ",
+  "history": "Moje przygoda z kodzeniem rozpoczeła się w technikum, ale ostatnimi czasy kodzenie sotalo moją pasją. Zawsze lubiłem możliwości samodoskonalenia, dlatego uważam, że świetnie nadaję sie do programowania. Zawsze mozna się czegoś nowego nauczyć, wszystko można zrobić lepiej, a każdy nowy dzień wiąże się z nowymi wyzwaniami. ",
   "technologies": "Technologie z którymi pracowałem.",
   "skills": {
-    "technologiesIKnow": "Technologie, które znam",
-    "iKnowDescription": "Bardzo dobrze umiem te techonologie. Pracowałem z nimi w przeszlości i mam doświadczenie potwierdzone projektami.",
-    "technologiesImLearning": "Technologies, których wciąż sie uczę",
-    "imLearningDescription": "Umiem je w miare dobrze, ale mam pewne braki.",
-    "whatImLearning": "",
+    "technologiesImLearning": "Uczę się",
     "technologies": "Technologie",
     "languages": "Języki",
     "react": "React",

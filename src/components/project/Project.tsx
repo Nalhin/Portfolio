@@ -7,25 +7,21 @@ import { displayedProjects } from '../../constants/displayedProjects';
 import styled from '@emotion/styled';
 import { useTheme } from '@emotion/core';
 import ProjectLink from './ProjectLink';
-import { StyledCard } from '../card/StyledCart';
 import { techStackIcons } from '../../constants/techStackIcons';
 import TechnologyIcon from '../icon/TechnologyIcon';
 import Image from '../image/Img';
+import Card from '../card/Card';
+import { CardHeader } from '../card/CardHeader';
 
-const StyledProject = StyledCard.withComponent(motion.div);
-
-export const StyledProjectCart = styled(StyledProject)`
+export const StyledProjectContainer = styled(motion.div)`
   margin-top: ${props => props.theme.space.large}px;
+  max-width: calc(90% + ${props => props.theme.space.large * 2}px);
   width: 500px;
 `;
 
 const StyledImage = styled(Image)`
   max-width: 100%;
   max-height: 400px;
-`;
-
-const StyledTitle = styled.h2`
-  font-size: ${props => props.theme.fontSizes.display}px;
 `;
 
 interface Props {
@@ -38,7 +34,8 @@ const StyledLinkContainer = styled.div`
 
 const StyledDescription = styled.span`
   text-align: center;
-  padding-top: ${props => props.theme.space.medium}px;
+  padding: ${props => props.theme.space.medium}px
+    ${props => props.theme.space.medium}px 0;
 `;
 
 const Project: React.FC<Props> = ({ project }) => {
@@ -49,34 +46,34 @@ const Project: React.FC<Props> = ({ project }) => {
   const projectName = displayedProjects.get(project.id);
 
   return (
-    <StyledProjectCart
+    <StyledProjectContainer
       initial={{ opacity: 0 }}
       animate={{ opacity: inView ? 1 : 0, scale: inView ? 1 : 0 }}
       ref={ref}
-      theme={theme}
     >
-      <StyledTitle>{project.name}</StyledTitle>
-      <div>
-        {project.repositoryTopics.nodes.map(top => {
-          const { name } = top.topic;
-          const icon = techStackIcons[name];
-          return icon && <TechnologyIcon icon={icon} key={name} />;
-        })}
-      </div>
-      <StyledImage
-        src={`/images/projects/${projectName}.jpg`}
-        alt={project.name}
-      />
-      <StyledDescription theme={theme}>
-        {t(`projects:${projectName}.description`)}
-      </StyledDescription>
-      <StyledLinkContainer>
-        <ProjectLink href={project.homepageUrl}>
-          {t('projects:preview')}
-        </ProjectLink>
-        <ProjectLink href={project.url}>{t('projects:viewCode')}</ProjectLink>
-      </StyledLinkContainer>
-    </StyledProjectCart>
+      <Card header={<CardHeader>{project.name}</CardHeader>}>
+        <div>
+          {project.repositoryTopics.nodes.map(top => {
+            const { name } = top.topic;
+            const icon = techStackIcons[name];
+            return icon && <TechnologyIcon icon={icon} key={name} />;
+          })}
+        </div>
+        <StyledImage
+          src={`/images/projects/${projectName}.jpg`}
+          alt={project.name}
+        />
+        <StyledDescription theme={theme}>
+          {t(`projects:${projectName}.description`)}
+        </StyledDescription>
+        <StyledLinkContainer>
+          <ProjectLink href={project.homepageUrl}>
+            {t('projects:preview')}
+          </ProjectLink>
+          <ProjectLink href={project.url}>{t('projects:viewCode')}</ProjectLink>
+        </StyledLinkContainer>
+      </Card>
+    </StyledProjectContainer>
   );
 };
 

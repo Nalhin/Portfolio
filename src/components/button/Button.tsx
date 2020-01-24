@@ -22,22 +22,25 @@ export const StyledButton = styled.button`
   cursor:pointer;
   position:relative;
   user-select:none;
+  transition: background 0.5s ease;
+
 
   &:hover {
     box-shadow: ${props => props.theme.boxShadow.hover}
-    background-color: ${props => props.theme.colors.secondary}dd;
+    background: ${props => props.theme.colors.secondary}dd;
   }
 `;
 
 interface Props {
-  onClick: () => void;
+  onClick?: () => void;
+  className?: string;
 }
 
-const Button: React.FC<Props> = ({ onClick, children }) => {
+const Button: React.FC<Props> = ({ onClick, children, className }) => {
   const theme = useTheme();
 
   return (
-    <StyledButton theme={theme} onClick={onClick}>
+    <StyledButton theme={theme} onClick={onClick} className={className}>
       {children}
     </StyledButton>
   );

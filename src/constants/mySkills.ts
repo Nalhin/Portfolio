@@ -49,7 +49,7 @@ export const mySkills = {
   ],
   whatImLearning: [
     {
-      title: 'about:skills.whatImLearning',
+      title: 'about:skills.technologiesImLearning',
       skills: [
         'python',
         'java',

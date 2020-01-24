@@ -39,22 +39,18 @@ const StyledSkillHeader = styled.h2`
 const StyledCardSection = styled.div`
   display: flex;
   align-items: flex-start;
-  margin: ${props => props.theme.space.large}px auto;
+  margin-top: ${props => props.theme.space.large}px;
   flex-flow: wrap;
-`;
-
-const StyledText = styled.span`
-  text-align: center;
-  display: block;
-`;
-
-const StyledSectionWrapper = styled.section`
-  width: 100%;
+  background: ${props => props.theme.colors.gradient};
+  padding: 30px;
+  border-radius: 30px;
+  color: #fff;
 `;
 
 const StyledWrapper = styled.div`
   max-width: 400px;
-  margin: 0 auto;
+  margin: 0 ${props => props.theme.space.large}px 0 auto;
+  text-align: justify;
 `;
 
 const About = () => {
@@ -69,9 +65,9 @@ const About = () => {
       <StyledContainer theme={theme}>
         <StyledCardSection>
           <StyledWrapper>
-            <span>{t('about:me')}</span>
-            <span>{t('about:currently')}</span>
-            <span>{t('about:history')}</span>
+            {t('about:me')}
+            {t('about:currently')}
+            {t('about:history')}
           </StyledWrapper>
           {loading ? (
             <GithubAccountPlaceholder />
@@ -81,29 +77,21 @@ const About = () => {
         </StyledCardSection>
       </StyledContainer>
       <StyledSkillContainer>
-        <StyledSkillHeader theme={theme}>
-          {t('about:skills.technologiesIKnow')}
-        </StyledSkillHeader>
-        <StyledText>{t('about:skills.iKnowDescription')}</StyledText>
-        <StyledSectionWrapper>
+        <section>
           <StyledSkillHeader>Frontend</StyledSkillHeader>
           <SkillSection skillSection={mySkills.frontEnd} />
-        </StyledSectionWrapper>
-        <StyledSectionWrapper>
+        </section>
+        <section>
           <StyledSkillHeader>Backend</StyledSkillHeader>
           <SkillSection skillSection={mySkills.backEnd} />
-        </StyledSectionWrapper>
-        <StyledSectionWrapper>
+        </section>
+        <section>
           <StyledSkillHeader>{t('about:skills.other')}</StyledSkillHeader>
           <SkillSection skillSection={mySkills.external} />
-        </StyledSectionWrapper>
-        <StyledSectionWrapper>
-          <StyledSkillHeader>
-            {t('about:skills.technologiesImLearning')}
-          </StyledSkillHeader>
-          <StyledText>{t('about:skills.imLearningDescription')}</StyledText>
+        </section>
+        <section>
           <SkillSection skillSection={mySkills.whatImLearning} />
-        </StyledSectionWrapper>
+        </section>
       </StyledSkillContainer>
     </div>
   );

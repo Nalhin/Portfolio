@@ -6,8 +6,7 @@ import styled from '@emotion/styled';
 import { useTheme } from '@emotion/core';
 
 const StyledNavLink = styled(StyledNavElement)`
-  margin: ${props => props.theme.space.large}px
-    ${props => props.theme.space.large}px;
+  margin: ${props => props.theme.space.large}px;
 `;
 
 interface Props {

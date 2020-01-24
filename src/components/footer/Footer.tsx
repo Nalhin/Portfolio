@@ -1,12 +1,11 @@
 import React from 'react';
-import FooterIcon from '../icon/FooterIcon';
-import Button from '../button/Button';
-import { useTranslation } from 'react-i18next';
+import SocialIcon from '../icon/SocialIcon';
 import styled from '@emotion/styled';
 import { useTheme } from '@emotion/core';
-import { isBrowser } from '../../utils/isBrowser';
-import { footerIcons } from '../../constants/footerIcons';
+import { socialIcons } from '../../constants/socialIcons';
 import { externalAddresses } from '../../constants/externalWebsiteLinks';
+import DownloadCv from '../downloadCv/DownloadCv';
+import SocialCv from '../icon/SocialCv';
 
 const StyledFooted = styled.footer`
   background: ${props => props.theme.colors.foreground};
@@ -41,31 +40,27 @@ const currentYear = new Date().getFullYear();
 
 const Footer = () => {
   const theme = useTheme();
-  const { t } = useTranslation();
-  const { i18n } = useTranslation();
-
-  const handleClick = () => {
-    if (isBrowser) {
-      window.open(`${window.location.origin}/cv/${i18n.language}`, '_blank');
-    }
-  };
 
   return (
     <StyledFooted theme={theme} data-testid="footer">
-      <Button onClick={handleClick}>{t('common:downloadCv')}</Button>
       <StyledIconContainer>
-        <FooterIcon url={externalAddresses.github} icon={footerIcons.github} />
-        <FooterIcon
+        <SocialIcon url={externalAddresses.github} icon={socialIcons.github} />
+        <SocialIcon
           url={externalAddresses.youtube}
-          icon={footerIcons.youtube}
+          icon={socialIcons.youtube}
         />
-        <FooterIcon
+        <SocialIcon
           url={externalAddresses.twitter}
-          icon={footerIcons.twitter}
+          icon={socialIcons.twitter}
         />
-        <FooterIcon
+        <SocialIcon
           url={externalAddresses.linkedinAddress}
-          icon={footerIcons.linkedin}
+          icon={socialIcons.linkedin}
+        />
+        <DownloadCv
+          Component={(props: { onClick: () => void }) => (
+            <SocialCv icon={socialIcons.downloadCv} onClick={props.onClick} />
+          )}
         />
       </StyledIconContainer>
       <StyledCopyright>

@@ -4,10 +4,13 @@ import { techStackIcons } from '../../constants/techStackIcons';
 import { useTheme } from '@emotion/core';
 import styled from '@emotion/styled';
 import { useTranslation } from 'react-i18next';
+import Card from '../card/Card';
+import { CardHeader } from '../card/CardHeader';
 
 const StyledSkillSection = styled.div`
   display: flex;
   justify-content: center;
+  align-items: flex-start;
   flex-direction: row;
   flex-flow: wrap;
   ${props => props.theme.mediaQueries.small} {
@@ -15,8 +18,10 @@ const StyledSkillSection = styled.div`
   }
 `;
 
-const StyledSkillFragment = styled.div`
-  padding: 16px;
+const StyledSkillFragment = styled(Card)`
+  margin: 16px;
+  padding: 0 ${props => props.theme.space.medium}px;
+
   ${props => props.theme.mediaQueries.small} {
     width: 100%;
   }
@@ -32,10 +37,13 @@ const StyledIconSpan = styled.span`
   padding-left: ${props => props.theme.space.medium}px;
 `;
 
-const StyledHeader = styled.h3`
-  text-align: center;
-  font-size: ${props => props.theme.fontSizes.body}px;
-  font-weight: ${props => props.theme.fontWeights.heading};
+const StyledCardHeader = styled(CardHeader)`
+  font-size: 20px;
+  padding: ${props => props.theme.space.medium}px;
+`;
+
+const SkillList = styled.ul`
+  width: 100%;
 `;
 
 interface Skills {
@@ -54,9 +62,16 @@ const SkillSection: React.FC<Props> = ({ skillSection }) => {
   return (
     <StyledSkillSection>
       {skillSection.map(technology => (
-        <StyledSkillFragment theme={theme} key={technology.title}>
-          <StyledHeader>{t(technology.title)}</StyledHeader>
-          <ul>
+        <StyledSkillFragment
+          theme={theme}
+          key={technology.title}
+          header={
+            t(technology.title) && (
+              <StyledCardHeader>{t(technology.title)}</StyledCardHeader>
+            )
+          }
+        >
+          <SkillList>
             {technology.skills.map(skill => (
               <StyledListItem key={skill}>
                 <TechnologyIcon icon={techStackIcons[skill]} />
@@ -65,7 +80,7 @@ const SkillSection: React.FC<Props> = ({ skillSection }) => {
                 </StyledIconSpan>
               </StyledListItem>
             ))}
-          </ul>
+          </SkillList>
         </StyledSkillFragment>
       ))}
     </StyledSkillSection>

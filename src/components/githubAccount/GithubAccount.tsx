@@ -14,6 +14,9 @@ const StyledAvatar = styled(Image)`
 
 export const StyledContainer = styled(StyledCard)`
   width: 240px;
+  color: #000;
+  border-radius: 20px;
+  box-shadow: ${props => props.theme.boxShadow};
   padding: ${props => props.theme.space.large}px;
   ${props => props.theme.mediaQueries.medium} {
     margin: auto;

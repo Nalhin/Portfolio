@@ -11,6 +11,7 @@ declare module '@emotion/core' {
       secondary: string;
       error: string;
       placeholder: string;
+      gradient: string;
     };
     breakpoints: string[];
     fontWeights: {

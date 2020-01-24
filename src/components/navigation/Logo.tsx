@@ -1,6 +1,5 @@
 import React from 'react';
 import Link from 'next/link';
-import Icon from '../icon/Icon';
 import styled from '@emotion/styled';
 import { useTheme } from '@emotion/core';
 
@@ -11,9 +10,17 @@ const StyledContainer = styled.div`
   }
 `;
 
-const StyledLogo = styled(Icon)`
-  padding-top: ${props => props.theme.space.medium}px;
+const StyledLogo = styled.a`
+  margin: ${props => props.theme.space.large}px;
+  display: flex;
   cursor: pointer;
+  font-weight: ${props => props.theme.fontWeights.heading};
+  font-size: ${props => props.theme.fontSizes.navigation}px;
+`;
+
+const StyledName = styled.span`
+  color: ${props => props.theme.colors.primary};
+  margin-right: ${props => props.theme.space.small}px;
 `;
 
 const Logo = () => {
@@ -21,9 +28,9 @@ const Logo = () => {
   return (
     <StyledContainer theme={theme}>
       <Link href={'/'}>
-        <a>
-          <StyledLogo src="logo" theme={theme} />
-        </a>
+        <StyledLogo theme={theme}>
+          <StyledName theme={theme}>Krzysztof</StyledName>
+        </StyledLogo>
       </Link>
     </StyledContainer>
   );

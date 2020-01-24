@@ -3,10 +3,11 @@ const colors = {
   textSecondary: '#3e3e3e',
   background: '#f8f8f8',
   foreground: '#ffffff',
-  primary: '#fdd023',
-  secondary: '#ff4081', //#232EFC
+  primary: '#2eca7f',
+  secondary: '#11998e',
   error: '#f44336',
   placeholder: '#edeff0',
+  gradient: 'linear-gradient(to right, #11998e, #38ef7d);',
 };
 
 const space = [0, 4, 8, 16, 32];
