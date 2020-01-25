@@ -27,7 +27,7 @@ export const StyledButton = styled.button`
 
   &:hover {
     box-shadow: ${props => props.theme.boxShadow.hover}
-    background: ${props => props.theme.colors.secondary}dd;
+    background: ${props => props.theme.colors.secondary}cc;
   }
 `;
 

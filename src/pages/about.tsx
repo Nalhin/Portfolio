@@ -14,7 +14,7 @@ import GithubAccountPlaceholder from '../components/githubAccount/GithubAccountP
 const StyledContainer = styled.div`
   display: flex;
   justify-content: center;
-  max-width: calc(90% + ${props => props.theme.space.large}px);
+  max-width: 90%;
   margin: 0 auto;
   ${props => props.theme.mediaQueries.medium} {
     flex-direction: column;
@@ -36,21 +36,38 @@ const StyledSkillHeader = styled.h2`
   font-weight: ${props => props.theme.fontWeights.heading};
 `;
 
-const StyledCardSection = styled.div`
-  display: flex;
-  align-items: flex-start;
+const StyledAboutSection = styled.section`
   margin-top: ${props => props.theme.space.large}px;
-  flex-flow: wrap;
   background: ${props => props.theme.colors.gradient};
-  padding: 30px;
+  padding: ${props => props.theme.space.large}px;
   border-radius: 30px;
   color: #fff;
 `;
 
 const StyledWrapper = styled.div`
   max-width: 400px;
-  margin: 0 ${props => props.theme.space.large}px 0 auto;
+  margin: 0 ${props => props.theme.space.large * 1.5}px 0 auto;
+  ${props => props.theme.mediaQueries.medium} {
+    margin: 0 0 ${props => props.theme.space.large}px;
+  }
   text-align: justify;
+`;
+
+const StyledSection = styled.section`
+  width: 100%;
+`;
+const StyledAboutTitle = styled.h1`
+  text-align: center;
+  font-size: ${props => props.theme.fontSizes.title}px;
+  font-weight: ${props => props.theme.fontWeights.heading};
+  padding-bottom: ${props => props.theme.space.medium}px;
+`;
+
+const StyledAboutWrapper = styled.div`
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+  flex-flow: wrap;
 `;
 
 const About = () => {
@@ -63,35 +80,38 @@ const About = () => {
   return (
     <div>
       <StyledContainer theme={theme}>
-        <StyledCardSection>
-          <StyledWrapper>
-            {t('about:me')}
-            {t('about:currently')}
-            {t('about:history')}
-          </StyledWrapper>
-          {loading ? (
-            <GithubAccountPlaceholder />
-          ) : (
-            <GithubAccount githubUser={data.user} />
-          )}
-        </StyledCardSection>
+        <StyledAboutSection>
+          <StyledAboutTitle>{t('about:aboutMe')} </StyledAboutTitle>
+          <StyledAboutWrapper>
+            <StyledWrapper>
+              {t('about:me')}
+              {t('about:currently')}
+              {t('about:history')}
+            </StyledWrapper>
+            {loading ? (
+              <GithubAccountPlaceholder />
+            ) : (
+              <GithubAccount githubUser={data.user} />
+            )}
+          </StyledAboutWrapper>
+        </StyledAboutSection>
       </StyledContainer>
       <StyledSkillContainer>
-        <section>
+        <StyledSection>
           <StyledSkillHeader>Frontend</StyledSkillHeader>
           <SkillSection skillSection={mySkills.frontEnd} />
-        </section>
-        <section>
+        </StyledSection>
+        <StyledSection>
           <StyledSkillHeader>Backend</StyledSkillHeader>
           <SkillSection skillSection={mySkills.backEnd} />
-        </section>
-        <section>
+        </StyledSection>
+        <StyledSection>
           <StyledSkillHeader>{t('about:skills.other')}</StyledSkillHeader>
           <SkillSection skillSection={mySkills.external} />
-        </section>
-        <section>
+        </StyledSection>
+        <StyledSection>
           <SkillSection skillSection={mySkills.whatImLearning} />
-        </section>
+        </StyledSection>
       </StyledSkillContainer>
     </div>
   );

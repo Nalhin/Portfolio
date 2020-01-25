@@ -15,6 +15,7 @@ const StyledContainer = styled.div`
 
 const StyledTitle = styled.h2`
   padding-top: ${props => props.theme.space.giga}px;
+  font-size: ${props => props.theme.fontSizes.navigation}px;
 `;
 
 interface Props {

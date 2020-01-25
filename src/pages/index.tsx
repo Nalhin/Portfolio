@@ -16,13 +16,18 @@ import DownloadCv from '../components/downloadCv/DownloadCv';
 import Button from '../components/button/Button';
 
 const StyledPrimaryColorText = styled.span`
-  color: ${props => props.theme.colors.secondary};
+  color: ${props => props.theme.colors.primary};
   font-weight: ${props => props.theme.fontWeights.heading};
 `;
 
 const StyledName = styled.span`
   font-weight: ${props => props.theme.fontWeights.heading};
   font-size: ${props => props.theme.fontSizes.title * 1.5}px;
+  font-weight: ${props => props.theme.fontWeights.heading};
+  color: ${props => props.theme.colors.textPrimary};
+  ${props => props.theme.mediaQueries.small} {
+    font-size: ${props => props.theme.fontSizes.title * 1.2}px;
+  }
 `;
 
 const StyledSubtext = styled.div`
@@ -35,8 +40,8 @@ const StyledSubtext = styled.div`
   align-items: center;
 `;
 
-const StyledDownloadCv = styled(DownloadCv)`
-  margin-top: ${props => props.theme.space.medium}px;
+const StyledButton = styled(Button)`
+  margin-top: ${props => props.theme.space.large}px;
 `;
 
 const Home: NextPage = () => {
@@ -57,9 +62,9 @@ const Home: NextPage = () => {
         <StyledPrimaryColorText theme={theme}>
           Full Stack Developer
         </StyledPrimaryColorText>
-        <StyledDownloadCv
+        <DownloadCv
           Component={(props: { onClick: () => void }) => (
-            <Button {...props}>{t('common:downloadCv')}</Button>
+            <StyledButton {...props}>{t('common:downloadCv')}</StyledButton>
           )}
         />
       </StyledSubtext>

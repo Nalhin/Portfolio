@@ -8,11 +8,5 @@
     "skills": "Skills",
     "contact": "Contact"
   },
-  "routes": {
-    "/": "Home",
-    "/about": "About",
-    "/projects": "Projects",
-    "/contact": "Contact"
-  },
   "downloadCv": "Download CV"
 }

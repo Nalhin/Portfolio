@@ -11,4 +11,5 @@ export const CardHeader = styled.div`
   font-size: ${props => props.theme.fontSizes.display}px;
   margin-bottom: ${props => props.theme.space.medium}px;
   border-radius: 8px 8px 0 0;
+  text-overflow: ellipsis;
 `;

@@ -6,7 +6,7 @@ interface StyledNavElementProps {
 
 export const StyledNavElement = styled.a<StyledNavElementProps>`
   margin: ${props => props.theme.space.large}px 0;
-  font-size: ${props => props.theme.fontSizes.navigation}px;
+  font-size: ${props => props.theme.fontSizes.navigation * 0.9}px;
   white-space: nowrap;
 
   &:after {

@@ -3,30 +3,30 @@
   "preview": "Strona",
   "viewCode": "Zobacz kod",
   "flappyBird": {
-    "description": "Gra flappy bird z oryginalnymi modelami."
+    "description": "Gra flappy bird napisana na canvasie."
   },
   "2048": {
-    "description": "Mój pierwszy projekt w Reakcie - gra typu 2048."
+    "description": "Gra 2048 w Reakcie."
   },
   "emoji": {
     "description": "Strona pozwalająca znaleźć i skopiować dowolną emoji."
   },
   "imgur": {
-    "description": "Strona pozwalająca wyświetlić losowy obrazek dodany na serwis imgur."
+    "description": "Strona pozwalająca wyświetlić losowy obrazek dodany na Imgur.com."
   },
   "colorPicker": {
-    "description": "Implementacja narzędzia do wybierania kolorów w Reakcie."
+    "description": "Narzędzie do wybierania kolorów w Reakcie."
   },
   "bookExchange": {
     "description": "Oficialna strona gieldy podreczników WPiA UJ 2019. Podczas trwania giełdy za pomocą portalu przeprowadzono ponad 600 transkacji."
   },
   "pokemonTeams": {
-    "description": "Strona pozwalająca użytkownikom tworzenie własnych drużyn z bazy ponad 600 unikatowych pokemonów."
+    "description": "Strona pozwalająca użytkownikom tworzenie własnych drużyn składających sie z ponad 600 unikatowych pokemonów."
   },
   "portfolio": {
     "description": "Moje portfolio wykonane w frameworku nextjs. W projecie zostało wykorzystane GraphQL API Githuba zintegrowane z apollo clientem."
   },
   "chess": {
-    "description": "Pokoje gier miedzy użytkownikami stworzone w architekturze microserwisowej. Gra i chat wykonane przy uzyciu websocketow w Java Springu."
+    "description": "Szachy online stworzone w architekturze microserwisowej w oparciu o websockety."
   }
 }

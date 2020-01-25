@@ -23,6 +23,10 @@ const StyledTable = styled.table`
   color: ${props => props.theme.colors.textSecondary};
 `;
 
+const StyledTitle = styled.h2`
+  font-size: ${props => props.theme.fontSizes.navigation}px;
+`;
+
 const ContributionShowcase = () => {
   const { t } = useTranslation();
   const theme = useTheme();
@@ -48,7 +52,7 @@ const ContributionShowcase = () => {
 
   return (
     <StyledContainer theme={theme}>
-      <div>{t('home:myActivity')}</div>
+      <StyledTitle theme={theme}>{t('home:myActivity')}</StyledTitle>
       <StyledTable theme={theme}>
         <thead>
           <tr>

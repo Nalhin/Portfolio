@@ -63,9 +63,6 @@ const NavBar = () => {
         ))}
       </StyledCenter>
       <LanguageSwitcher />
-      <StyledMobileText theme={theme}>
-        {t(`common:routes.${router.pathname}`)}
-      </StyledMobileText>
       <MobileNav toggleMenu={handleMobileOpen} isMobileOpen={isMobileOpen} />
     </StyledNavigation>
   );

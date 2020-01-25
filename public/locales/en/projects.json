@@ -3,16 +3,16 @@
   "preview": "Live preview",
   "viewCode": "View code",
   "flappyBird": {
-    "description": "Flappy Bird game with it's original assets."
+    "description": "Flappy Bird game implemented on canvas."
   },
   "2048": {
-    "description": "My first React project - 2048 game."
+    "description": "2048 game in React."
   },
   "emoji": {
     "description": "A website that allows users to find and copy any given emoji."
   },
   "imgur": {
-    "description": "A website that displays random images from imgur."
+    "description": "A website that displays random images from Imgur.com."
   },
   "colorPicker": {
     "description": "Color Picker implementation in React."
@@ -27,6 +27,6 @@
     "description": "My personal portfolio in nextjs. Data used in project comes from Github GraphQL API integrated with apollo client."
   },
   "chess": {
-    "description": "Chess game rooms with microservice architecture. Game and chat implemented with websocket technology in Java Spring."
+    "description": "Online chess games with microservice architecture implemented with websockets."
   }
 }

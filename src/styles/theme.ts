@@ -3,11 +3,11 @@ const colors = {
   textSecondary: '#3e3e3e',
   background: '#f8f8f8',
   foreground: '#ffffff',
-  primary: '#2eca7f',
-  secondary: '#11998e',
+  primary: '#5433ff',
+  secondary: '#ed3a80',
   error: '#f44336',
   placeholder: '#edeff0',
-  gradient: 'linear-gradient(to right, #11998e, #38ef7d);',
+  gradient: ' radial-gradient(circle at 19% 19%,#4640ff 21%,#62aaff 100%);',
 };
 
 const space = [0, 4, 8, 16, 32];

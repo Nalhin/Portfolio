@@ -8,11 +8,5 @@
     "skills": "Umiejętności",
     "contact": "Kontakt"
   },
-  "routes": {
-    "/": "Główna",
-    "/about": "O mnie",
-    "/projects": "Projekty",
-    "/contact": "Kontakt"
-  },
   "downloadCv": "Pobierz CV"
 }

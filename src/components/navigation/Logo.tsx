@@ -29,7 +29,7 @@ const Logo = () => {
     <StyledContainer theme={theme}>
       <Link href={'/'}>
         <StyledLogo theme={theme}>
-          <StyledName theme={theme}>Krzysztof</StyledName>
+          <StyledName theme={theme}>Krzysztof Olipra</StyledName>
         </StyledLogo>
       </Link>
     </StyledContainer>
