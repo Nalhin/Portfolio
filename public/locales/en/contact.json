@@ -10,5 +10,5 @@
   "directContact": "Contact me directly",
   "formFieldEmpty": "There was an empty field!",
   "serverError": "Mailing service is offline!",
-  "invalidEmail": "Invalid email address"
+  "invalidEmail": "Invalid email address!"
 }

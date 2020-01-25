@@ -3,7 +3,7 @@ const colors = {
   textSecondary: '#3e3e3e',
   background: '#f8f8f8',
   foreground: '#ffffff',
-  primary: '#5433ff',
+  primary: '#0395DE',
   secondary: '#ed3a80',
   error: '#f44336',
   placeholder: '#edeff0',

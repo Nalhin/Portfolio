@@ -22,5 +22,8 @@ export const StyledNavElement = styled.a<StyledNavElementProps>`
 
   &:hover {
     cursor: pointer;
+    &:after {
+      transform: scaleX(1);
+    }
   }
 `;

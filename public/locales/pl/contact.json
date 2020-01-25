@@ -8,7 +8,7 @@
     "send": "Wyślij"
   },
   "directContact": "Skontaktuj się bezpośrednio",
-  "formFieldEmpty": "Wypelnij każde pole!",
+  "formFieldEmpty": "Wypełnij każde pole!",
   "serverError": "Serwis poczty jest offline!",
   "invalidEmail": "Niepoprawny adres email!"
 }

@@ -18,6 +18,9 @@ import Button from '../components/button/Button';
 const StyledPrimaryColorText = styled.span`
   color: ${props => props.theme.colors.primary};
   font-weight: ${props => props.theme.fontWeights.heading};
+  ${props => props.theme.mediaQueries.small} {
+    font-size: ${props => props.theme.fontSizes.body}px;
+  }
 `;
 
 const StyledName = styled.span`
@@ -26,7 +29,7 @@ const StyledName = styled.span`
   font-weight: ${props => props.theme.fontWeights.heading};
   color: ${props => props.theme.colors.textPrimary};
   ${props => props.theme.mediaQueries.small} {
-    font-size: ${props => props.theme.fontSizes.title * 1.2}px;
+    font-size: ${props => props.theme.fontSizes.title}px;
   }
 `;
 
@@ -60,7 +63,7 @@ const Home: NextPage = () => {
       <StyledSubtext theme={theme}>
         <StyledName>Krzysztof Olipra</StyledName>
         <StyledPrimaryColorText theme={theme}>
-          Full Stack Developer
+          Fullstack Developer
         </StyledPrimaryColorText>
         <DownloadCv
           Component={(props: { onClick: () => void }) => (

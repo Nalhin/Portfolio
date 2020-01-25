@@ -20,7 +20,7 @@ const StyledForm = styled.form`
 
 const StyledCard = styled(Card)`
   margin-top: ${props => props.theme.space.large}px;
-  width: calc(90% - ${props => props.theme.space.large * 2}px);
+  width: 90%;
   max-width: ${props => props.theme.space.large * 2 + 300}px;
 `;
 
