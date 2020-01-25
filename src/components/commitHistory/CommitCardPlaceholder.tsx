@@ -1,6 +1,6 @@
-import React from 'react';
-import { StyledCommitCard } from './CommitCard';
-import { useTheme } from '@emotion/core';
+import React from "react";
+import { StyledCommitCard } from "./CommitCard";
+import { useTheme } from "@emotion/core";
 
 const CommitCardPlaceholder = () => {
   const theme = useTheme();
@@ -32,9 +32,9 @@ const CommitCardPlaceholder = () => {
           mask="url(#shining)"
         />
         <rect
-          width="300"
+          width="290"
           height="20"
-          x="0"
+          x="10"
           y="65"
           fill={theme.colors.placeholder}
           mask="url(#shining)"
