@@ -4,29 +4,16 @@
 # Personal Portfolio
 
 Portfolio website written in Typescript, utilizing React server side rendering (Next.js) for better performance.
-Integrates Github's Graphql API to display my github activity.
-
-## Presentation
-
-![home](screenshots/home.png)
-
-![home-mobile](screenshots/home-mobile.png)
-
-![about-mobile](screenshots/about-mobile.png)
-
-![projects-mobile](screenshots/projects-mobile.png)
-
-![contact-mobile](screenshots/contact-mobile.png)
+Utilizes Github's Graphql API to display my github activity.
 
 ## Technology Stack
 
 * Typescript
 * React
 * Apollo Client
-* GraphQL (Github API queries)
-* I18next (React I18next, nextI18next)
-* Emotion (and Themes)
-* Framer Motion (Animations)
+* GraphQL
+* I18next
+* Emotion
 * Express
 * Jest
 * React Testing Library
