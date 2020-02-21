@@ -38,10 +38,10 @@ const StyledSkillHeader = styled.h2`
 
 const StyledAboutSection = styled.section`
   margin-top: ${props => props.theme.space.large}px;
-  background: ${props => props.theme.colors.gradient};
+  background: ${props => props.theme.colors.foreground};
   padding: ${props => props.theme.space.large}px;
-  border-radius: 30px;
-  color: #fff;
+  color: #000;
+  box-shadow: ${props => props.theme.boxShadow.navigation};
 `;
 
 const StyledWrapper = styled.div`
