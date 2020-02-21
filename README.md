@@ -3,18 +3,10 @@
 
 # Personal Portfolio
 
-Portfolio website utilizing React server side rendering (Next.js) written in Typescript.
-Integrates Github Graphql v4 API to display my github activity (the latest commits, commit count in last month and much more).
-Apollo Client was use for cache management and query handling via hooks.
-Fully responsive, mobile first design, supports multiple resolutions and browsers.
-Next.js includes a custom config - express server with nextI18NextMiddleware (needed for translations to work)
-and contact endpoint, which uses sendmail in order to proxy messages to my own email.
-Does not use any component library, every component has been written manually.
-Emotion theming has been used for better consistency between components.
-The theme interface implementation was based on [System-UI Theme Specification](https://system-ui.com/theme).
-Tests with Jest and React Testing Library.
+Portfolio website written in Typescript, utilizing React server side rendering (Next.js) for better performance.
+Integrates Github's Graphql API to display my github activity.
 
-## Showcase
+## Presentation
 
 ![home](screenshots/home.png)
 
@@ -49,8 +41,8 @@ src
 ├── constants (constant values)
 ├── interfaces (typescript interfaces)
 ├── lib (external libraries like i18n)
-├── pages (Next.js Routes)
-├── server (Custom express server)
+├── pages (routes)
+├── server (custom express server)
 ├── styles (emotion theme and style variables)
 └── utils (utility functions)
 ```

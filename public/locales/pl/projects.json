@@ -24,7 +24,7 @@
     "description": "Strona pozwalająca użytkownikom tworzenie własnych drużyn składających sie z ponad 600 unikatowych pokemonów."
   },
   "portfolio": {
-    "description": "Moje portfolio wykonane w frameworku nextjs. W projecie zostało wykorzystane GraphQL API Githuba zintegrowane z apollo clientem."
+    "description": "Moje portfolio wykonane w frameworku nextjs."
   },
   "chess": {
     "description": "Szachy online stworzone w architekturze microserwisowej w oparciu o websockety."
