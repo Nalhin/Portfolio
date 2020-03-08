@@ -33,9 +33,7 @@ const CommitHistory: React.FC<Props> = ({ commits, loading }) => {
       {loading ? (
         <LoadingPlaceholder />
       ) : (
-        commits.map(commit => (
-          <CommitCard commit={commit} key={commit.committedDate} />
-        ))
+        commits.map(commit => <CommitCard commit={commit} key={commit.id} />)
       )}
     </StyledContainer>
   );

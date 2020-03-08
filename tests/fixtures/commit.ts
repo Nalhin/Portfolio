@@ -5,4 +5,5 @@ export const mockCommit = {
   repositoryName: 'Repository',
   repositoryUrl: 'https://github.com/repository',
   url: 'https://github.com/user/repository/commit/0d02354fa250f2ede',
+  id: '1',
 };

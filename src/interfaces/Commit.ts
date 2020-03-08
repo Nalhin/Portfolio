@@ -5,4 +5,5 @@ export interface Commit {
   repositoryName: string;
   repositoryUrl: string;
   url: string;
+  id: string;
 }

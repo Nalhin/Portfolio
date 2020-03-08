@@ -14,12 +14,12 @@ export const extractCommits = (data: any): Commit[] => {
         );
 
         const { author, committer, id } = commit.node;
-
         if (
           !ids[id] &&
           ((author.user && author.user.login === githubUserLogin) ||
             (committer.user && committer.user.login === githubUserLogin))
         ) {
+          ids[id] = true;
           commits.push({
             committedDate,
             message,
@@ -27,6 +27,7 @@ export const extractCommits = (data: any): Commit[] => {
             repositoryName: repo.name,
             repositoryUrl: repo.url,
             url,
+            id,
           });
         }
       }),
