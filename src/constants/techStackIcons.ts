@@ -22,6 +22,7 @@ export const techStackIcons: iconsOptions = {
   firebase: { src: 'firebase', name: 'Firebase' },
   github: { src: 'github', name: 'Github' },
   graphql: { src: 'graphql', name: 'GraphQL' },
+  hibernate: { src: 'hibernate', name: 'Hibernate' },
   html: { src: 'html', name: 'HTML5' },
   intellij: { src: 'intellij-idea', name: 'Intellij Idea' },
   java: { src: 'java', name: 'Java' },

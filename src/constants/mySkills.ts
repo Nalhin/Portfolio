@@ -28,8 +28,12 @@ export const mySkills = {
   ],
   backEnd: [
     {
+      title: 'about:skills.languages',
+      skills: ['javascript', 'es6', 'typescript', 'java', 'graphql'],
+    },
+    {
       title: 'about:skills.technologies',
-      skills: ['nodejs', 'express', 'graphql', 'nestjs'],
+      skills: ['nodejs', 'express', 'nestjs', 'spring', 'hibernate'],
     },
     {
       title: 'about:skills.databases',
@@ -53,7 +57,7 @@ export const mySkills = {
   whatImLearning: [
     {
       title: 'about:skills.technologiesImLearning',
-      skills: ['python', 'java', 'spring', 'vue', 'nuxt'],
+      skills: ['python', 'django', 'vue', 'nuxt'],
     },
   ],
 };

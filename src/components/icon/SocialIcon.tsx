@@ -12,7 +12,7 @@ export const StyledA = styled.a`
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: background 0.5s ease;
+  transition: background 0.5s ease-out;
   cursor: pointer;
   &:hover {
     background: ${props => props.theme.colors.primary};

@@ -52,7 +52,7 @@ const Home: NextPage = () => {
   const { t } = useTranslation();
 
   const { loading, data } = useQuery(getLatestActivity, {
-    variables: { githubUserLogin },
+    variables: { githubUserLogin, ssr: false },
   });
 
   const commits = React.useMemo(() => extractCommits(data), [data]);
