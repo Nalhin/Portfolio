@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/Nalhin/Portfolio.svg?branch=master)](https://travis-ci.com/Nalhin/Portfolio)
+[![Test](https://github.com/Nalhin/Portfolio/workflows/Test/badge.svg?branch=master)](https://github.com/Nalhin/Portfolio/actions)
 [![Codecov](https://codecov.io/gh/Nalhin/Portfolio/branch/master/graph/badge.svg)](https://codecov.io/gh/Nalhin/Portfolio)
 
 # Personal Portfolio
